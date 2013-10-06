@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		13DC8D2FC2E94BAF8A4FEEBC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C014A1A0A48A487DF263C /* libPods.a */; };
+		5EE2868017FFE71100D286ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2867F17FFE71100D286ED /* Foundation.framework */; };
+		5EE2868217FFE71100D286ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2868117FFE71100D286ED /* CoreGraphics.framework */; };
+		5EE2868417FFE71100D286ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2868317FFE71100D286ED /* UIKit.framework */; };
+		5EE2868A17FFE71100D286ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2868817FFE71100D286ED /* InfoPlist.strings */; };
+		5EE2868C17FFE71100D286ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2868B17FFE71100D286ED /* main.m */; };
+		5EE2869017FFE71100D286ED /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2868F17FFE71100D286ED /* SSAppDelegate.m */; };
+		5EE2869917FFE71100D286ED /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2869817FFE71100D286ED /* SSViewController.m */; };
+		5EE2869B17FFE71100D286ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE2869A17FFE71100D286ED /* Images.xcassets */; };
+		5EE286A217FFE71100D286ED /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286A117FFE71100D286ED /* XCTest.framework */; };
+		5EE286A317FFE71100D286ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2867F17FFE71100D286ED /* Foundation.framework */; };
+		5EE286A417FFE71100D286ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2868317FFE71100D286ED /* UIKit.framework */; };
+		5EE286AC17FFE71100D286ED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EE286AA17FFE71100D286ED /* InfoPlist.strings */; };
+		5EE286AE17FFE71100D286ED /* SSLabelExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE286AD17FFE71100D286ED /* SSLabelExampleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EE286A517FFE71100D286ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EE2867417FFE71100D286ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EE2867B17FFE71100D286ED;
+			remoteInfo = SSLabelExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5EE2867C17FFE71100D286ED /* SSLabelExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSLabelExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EE2867F17FFE71100D286ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5EE2868117FFE71100D286ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5EE2868317FFE71100D286ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5EE2868717FFE71100D286ED /* SSLabelExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSLabelExample-Info.plist"; sourceTree = "<group>"; };
+		5EE2868917FFE71100D286ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5EE2868B17FFE71100D286ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EE2868D17FFE71100D286ED /* SSLabelExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSLabelExample-Prefix.pch"; sourceTree = "<group>"; };
+		5EE2868E17FFE71100D286ED /* SSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAppDelegate.h; sourceTree = "<group>"; };
+		5EE2868F17FFE71100D286ED /* SSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
+		5EE2869717FFE71100D286ED /* SSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSViewController.h; sourceTree = "<group>"; };
+		5EE2869817FFE71100D286ED /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
+		5EE2869A17FFE71100D286ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5EE286A017FFE71100D286ED /* SSLabelExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSLabelExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EE286A117FFE71100D286ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5EE286A917FFE71100D286ED /* SSLabelExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SSLabelExampleTests-Info.plist"; sourceTree = "<group>"; };
+		5EE286AB17FFE71100D286ED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5EE286AD17FFE71100D286ED /* SSLabelExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSLabelExampleTests.m; sourceTree = "<group>"; };
+		807C014A1A0A48A487DF263C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E75210B7FC074D7D8C7E2B56 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EE2867917FFE71100D286ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE2868217FFE71100D286ED /* CoreGraphics.framework in Frameworks */,
+				5EE2868417FFE71100D286ED /* UIKit.framework in Frameworks */,
+				5EE2868017FFE71100D286ED /* Foundation.framework in Frameworks */,
+				13DC8D2FC2E94BAF8A4FEEBC /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EE2869D17FFE71100D286ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE286A217FFE71100D286ED /* XCTest.framework in Frameworks */,
+				5EE286A417FFE71100D286ED /* UIKit.framework in Frameworks */,
+				5EE286A317FFE71100D286ED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5EE2867317FFE71100D286ED = {
+			isa = PBXGroup;
+			children = (
+				5EE2868517FFE71100D286ED /* SSLabelExample */,
+				5EE286A717FFE71100D286ED /* SSLabelExampleTests */,
+				5EE2867E17FFE71100D286ED /* Frameworks */,
+				5EE2867D17FFE71100D286ED /* Products */,
+				E75210B7FC074D7D8C7E2B56 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		5EE2867D17FFE71100D286ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2867C17FFE71100D286ED /* SSLabelExample.app */,
+				5EE286A017FFE71100D286ED /* SSLabelExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EE2867E17FFE71100D286ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2867F17FFE71100D286ED /* Foundation.framework */,
+				5EE2868117FFE71100D286ED /* CoreGraphics.framework */,
+				5EE2868317FFE71100D286ED /* UIKit.framework */,
+				5EE286A117FFE71100D286ED /* XCTest.framework */,
+				807C014A1A0A48A487DF263C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5EE2868517FFE71100D286ED /* SSLabelExample */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2868E17FFE71100D286ED /* SSAppDelegate.h */,
+				5EE2868F17FFE71100D286ED /* SSAppDelegate.m */,
+				5EE2869717FFE71100D286ED /* SSViewController.h */,
+				5EE2869817FFE71100D286ED /* SSViewController.m */,
+				5EE2869A17FFE71100D286ED /* Images.xcassets */,
+				5EE2868617FFE71100D286ED /* Supporting Files */,
+			);
+			path = SSLabelExample;
+			sourceTree = "<group>";
+		};
+		5EE2868617FFE71100D286ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EE2868717FFE71100D286ED /* SSLabelExample-Info.plist */,
+				5EE2868817FFE71100D286ED /* InfoPlist.strings */,
+				5EE2868B17FFE71100D286ED /* main.m */,
+				5EE2868D17FFE71100D286ED /* SSLabelExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EE286A717FFE71100D286ED /* SSLabelExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EE286AD17FFE71100D286ED /* SSLabelExampleTests.m */,
+				5EE286A817FFE71100D286ED /* Supporting Files */,
+			);
+			path = SSLabelExampleTests;
+			sourceTree = "<group>";
+		};
+		5EE286A817FFE71100D286ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EE286A917FFE71100D286ED /* SSLabelExampleTests-Info.plist */,
+				5EE286AA17FFE71100D286ED /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EE2867B17FFE71100D286ED /* SSLabelExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EE286B117FFE71100D286ED /* Build configuration list for PBXNativeTarget "SSLabelExample" */;
+			buildPhases = (
+				2B75554A8E64465AB6CE3806 /* Check Pods Manifest.lock */,
+				5EE2867817FFE71100D286ED /* Sources */,
+				5EE2867917FFE71100D286ED /* Frameworks */,
+				5EE2867A17FFE71100D286ED /* Resources */,
+				66DE001429D84209BB1A9EA7 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSLabelExample;
+			productName = SSLabelExample;
+			productReference = 5EE2867C17FFE71100D286ED /* SSLabelExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5EE2869F17FFE71100D286ED /* SSLabelExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EE286B417FFE71100D286ED /* Build configuration list for PBXNativeTarget "SSLabelExampleTests" */;
+			buildPhases = (
+				5EE2869C17FFE71100D286ED /* Sources */,
+				5EE2869D17FFE71100D286ED /* Frameworks */,
+				5EE2869E17FFE71100D286ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EE286A617FFE71100D286ED /* PBXTargetDependency */,
+			);
+			name = SSLabelExampleTests;
+			productName = SSLabelExampleTests;
+			productReference = 5EE286A017FFE71100D286ED /* SSLabelExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EE2867417FFE71100D286ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Splinesoft;
+				TargetAttributes = {
+					5EE2869F17FFE71100D286ED = {
+						TestTargetID = 5EE2867B17FFE71100D286ED;
+					};
+				};
+			};
+			buildConfigurationList = 5EE2867717FFE71100D286ED /* Build configuration list for PBXProject "SSLabelExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5EE2867317FFE71100D286ED;
+			productRefGroup = 5EE2867D17FFE71100D286ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EE2867B17FFE71100D286ED /* SSLabelExample */,
+				5EE2869F17FFE71100D286ED /* SSLabelExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EE2867A17FFE71100D286ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE2869B17FFE71100D286ED /* Images.xcassets in Resources */,
+				5EE2868A17FFE71100D286ED /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EE2869E17FFE71100D286ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE286AC17FFE71100D286ED /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B75554A8E64465AB6CE3806 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		66DE001429D84209BB1A9EA7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EE2867817FFE71100D286ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE2869917FFE71100D286ED /* SSViewController.m in Sources */,
+				5EE2869017FFE71100D286ED /* SSAppDelegate.m in Sources */,
+				5EE2868C17FFE71100D286ED /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EE2869C17FFE71100D286ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EE286AE17FFE71100D286ED /* SSLabelExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EE286A617FFE71100D286ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EE2867B17FFE71100D286ED /* SSLabelExample */;
+			targetProxy = 5EE286A517FFE71100D286ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5EE2868817FFE71100D286ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EE2868917FFE71100D286ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5EE286AA17FFE71100D286ED /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EE286AB17FFE71100D286ED /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5EE286AF17FFE71100D286ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5EE286B017FFE71100D286ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EE286B217FFE71100D286ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E75210B7FC074D7D8C7E2B56 /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSLabelExample/SSLabelExample-Prefix.pch";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				INFOPLIST_FILE = "SSLabelExample/SSLabelExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5EE286B317FFE71100D286ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E75210B7FC074D7D8C7E2B56 /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSLabelExample/SSLabelExample-Prefix.pch";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				INFOPLIST_FILE = "SSLabelExample/SSLabelExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5EE286B517FFE71100D286ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SSLabelExample.app/SSLabelExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSLabelExample/SSLabelExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SSLabelExampleTests/SSLabelExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5EE286B617FFE71100D286ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SSLabelExample.app/SSLabelExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SSLabelExample/SSLabelExample-Prefix.pch";
+				INFOPLIST_FILE = "SSLabelExampleTests/SSLabelExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EE2867717FFE71100D286ED /* Build configuration list for PBXProject "SSLabelExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EE286AF17FFE71100D286ED /* Debug */,
+				5EE286B017FFE71100D286ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EE286B117FFE71100D286ED /* Build configuration list for PBXNativeTarget "SSLabelExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EE286B217FFE71100D286ED /* Debug */,
+				5EE286B317FFE71100D286ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EE286B417FFE71100D286ED /* Build configuration list for PBXNativeTarget "SSLabelExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EE286B517FFE71100D286ED /* Debug */,
+				5EE286B617FFE71100D286ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5EE2867417FFE71100D286ED /* Project object */;
+}
