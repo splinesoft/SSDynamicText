@@ -14,7 +14,7 @@ Enter `SSLabel`, a simple `UILabel` subclass inspired by [this](http://stackover
 Install with [Cocoapods](http://cocoapods.org). Add to your podfile:
 
 ```
-pod 'SSLabel', :git => 'https://github.com/splinesoft/SSLabel'
+pod 'SSLabel', :head # YOLO
 ```
 
 ## SSLabel
