@@ -1,8 +1,8 @@
 //
 //  SSAppDelegate.m
-//  SSLabelExample
+//  SSDynamicTextExample
 //
-//  Created by Jonathan Hersh on 10/4/13.
+//  Created by Jonathan Hersh on 10/6/13.
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
@@ -13,7 +13,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = [SSViewController new];
     [self.window makeKeyAndVisible];

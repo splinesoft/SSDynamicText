@@ -4,4 +4,4 @@ set -e
 
 cd Example
 pod install
-xctool -workspace SSLabelExample.xcworkspace -scheme SSLabelExample -sdk iphonesimulator build ONLY_ACTIVE_ARCH=NO
+xctool -workspace SSDynamicTextExample.xcworkspace -scheme SSDynamicTextExample -sdk iphonesimulator build ONLY_ACTIVE_ARCH=NO

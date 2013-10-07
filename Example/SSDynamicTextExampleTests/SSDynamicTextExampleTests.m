@@ -1,18 +1,18 @@
 //
-//  SSLabelExampleTests.m
-//  SSLabelExampleTests
+//  SSDynamicTextExampleTests.m
+//  SSDynamicTextExampleTests
 //
-//  Created by Jonathan Hersh on 10/4/13.
+//  Created by Jonathan Hersh on 10/6/13.
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SSLabelExampleTests : XCTestCase
+@interface SSDynamicTextExampleTests : XCTestCase
 
 @end
 
-@implementation SSLabelExampleTests
+@implementation SSDynamicTextExampleTests
 
 - (void)setUp
 {

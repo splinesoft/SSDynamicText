@@ -1,5 +1,5 @@
 platform :ios, '7.0'
 
-xcodeproj 'SSLabelExample'
+xcodeproj 'SSDynamicTextExample'
 
 pod 'SSDynamicText', :path => '../'

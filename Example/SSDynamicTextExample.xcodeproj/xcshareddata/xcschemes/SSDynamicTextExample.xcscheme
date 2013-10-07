@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EE2867B17FFE71100D286ED"
-               BuildableName = "SSLabelExample.app"
-               BlueprintName = "SSLabelExample"
-               ReferencedContainer = "container:SSLabelExample.xcodeproj">
+               BlueprintIdentifier = "5EE286D2180239B800D286ED"
+               BuildableName = "SSDynamicTextExample.app"
+               BlueprintName = "SSDynamicTextExample"
+               ReferencedContainer = "container:SSDynamicTextExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5EE2869F17FFE71100D286ED"
-               BuildableName = "SSLabelExampleTests.xctest"
-               BlueprintName = "SSLabelExampleTests"
-               ReferencedContainer = "container:SSLabelExample.xcodeproj">
+               BlueprintIdentifier = "5EE286F6180239B900D286ED"
+               BuildableName = "SSDynamicTextExampleTests.xctest"
+               BlueprintName = "SSDynamicTextExampleTests"
+               ReferencedContainer = "container:SSDynamicTextExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EE2867B17FFE71100D286ED"
-            BuildableName = "SSLabelExample.app"
-            BlueprintName = "SSLabelExample"
-            ReferencedContainer = "container:SSLabelExample.xcodeproj">
+            BlueprintIdentifier = "5EE286D2180239B800D286ED"
+            BuildableName = "SSDynamicTextExample.app"
+            BlueprintName = "SSDynamicTextExample"
+            ReferencedContainer = "container:SSDynamicTextExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EE2867B17FFE71100D286ED"
-            BuildableName = "SSLabelExample.app"
-            BlueprintName = "SSLabelExample"
-            ReferencedContainer = "container:SSLabelExample.xcodeproj">
+            BlueprintIdentifier = "5EE286D2180239B800D286ED"
+            BuildableName = "SSDynamicTextExample.app"
+            BlueprintName = "SSDynamicTextExample"
+            ReferencedContainer = "container:SSDynamicTextExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5EE2867B17FFE71100D286ED"
-            BuildableName = "SSLabelExample.app"
-            BlueprintName = "SSLabelExample"
-            ReferencedContainer = "container:SSLabelExample.xcodeproj">
+            BlueprintIdentifier = "5EE286D2180239B800D286ED"
+            BuildableName = "SSDynamicTextExample.app"
+            BlueprintName = "SSDynamicTextExample"
+            ReferencedContainer = "container:SSDynamicTextExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
