@@ -14,7 +14,7 @@ Enter SSDynamicText, a collection of simple `UILabel`, `UITextField`, and `UITex
 Install with [Cocoapods](http://cocoapods.org). Add to your podfile:
 
 ```
-pod 'SSLabel', :head # YOLO
+pod 'SSDynamicText', :head # YOLO
 ```
 
 ## SSDynamicLabel
