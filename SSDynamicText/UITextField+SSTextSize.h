@@ -1,5 +1,5 @@
 //
-//  SSDynamicTextField.h
+//  UITextField+SSTextSize.h
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/6/13.
@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SSDynamicTextField : UITextField
+@interface UITextField (SSTextSize)
+
+/**
+ * Add dynamic text size awareness to an existing text field.
+ * Or, use one of the constructors below for a new text field.
+ */
+- (void) ss_setupDynamicTextSize;
 
 /**
  * Create a dynamic-sizing label that will adjust its size in response to changes

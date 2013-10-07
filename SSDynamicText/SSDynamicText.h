@@ -13,8 +13,8 @@
 #import "UIFont+SSTextSize.h"
 #import "UIView+SSTextSize.h"
 
-#import "SSDynamicLabel.h"
-#import "SSDynamicTextField.h"
-#import "SSDynamicTextView.h"
+#import "UILabel+SSTextSize.h"
+#import "UITextField+SSTextSize.h"
+#import "UITextView+SSTextSize.h"
 
 #endif

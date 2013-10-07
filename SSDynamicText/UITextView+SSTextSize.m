@@ -1,5 +1,5 @@
 //
-//  SSDynamicTextView.m
+//  UITextView+SSTextSize.m
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/6/13.
@@ -8,49 +8,21 @@
 
 #import "SSDynamicText.h"
 
-@interface SSDynamicTextView ()
-
-- (void) setup;
-
-@end
-
-@implementation SSDynamicTextView
-
-- (id)init {
-    if( ( self = [super init] ) ) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
-    if( ( self = [super initWithFrame:frame] ) ) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if( ( self = [super initWithCoder:aDecoder] ) ) {
-        [self setup];
-    }
-    
-    return self;
-}
+@implementation UITextView (SSTextSize)
 
 + (instancetype) textViewWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicTextView *textView = [SSDynamicTextView new];
+    UITextView *textView = [UITextView new];
     textView.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName
                                                                          size:size];
+    [textView ss_setupDynamicTextSize];
     
     return textView;
 }
 
 + (instancetype)textViewWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextView *textView = [SSDynamicTextView new];
+    UITextView *textView = [UITextView new];
     textView.defaultFontDescriptor = descriptor;
+    [textView ss_setupDynamicTextSize];
     
     return textView;
 }
@@ -59,7 +31,7 @@
     [self ss_stopObservingTextSizeChanges];
 }
 
-- (void)setup {
+- (void) ss_setupDynamicTextSize {
     __weak typeof (self) weakSelf = self;
     
     SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {

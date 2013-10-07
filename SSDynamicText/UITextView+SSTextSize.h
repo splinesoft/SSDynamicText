@@ -1,5 +1,5 @@
 //
-//  SSDynamicTextView.h
+//  UITextView+SSTextSize.h
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/6/13.
@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SSDynamicTextView : UITextView
+@interface UITextView (SSTextSize)
+
+/**
+ * Add dynamic text size awareness to an existing label.
+ * Or, use one of the constructors below for a new label.
+ */
+- (void) ss_setupDynamicTextSize;
 
 /**
  * Create a dynamic-sizing textview that will adjust its size in response to changes

@@ -11,9 +11,9 @@
 
 @interface SSViewController ()
 
-@property (nonatomic, strong) SSDynamicLabel *label;
-@property (nonatomic, strong) SSDynamicTextField *textField;
-@property (nonatomic, strong) SSDynamicTextView *textView;
+@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UITextView *textView;
 
 @end
 
@@ -24,7 +24,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _label = [SSDynamicLabel labelWithFont:@"Courier" baseSize:16.0f];
+    _label = [UILabel labelWithFont:@"Courier" baseSize:16.0f];
     _label.text = @"This label, text field, and text view all support custom fonts and respond to changes in preferred text size.\n\nSwitch to Settings.app, change your preferred text size, then switch back here.";
     _label.textColor = [UIColor darkGrayColor];
     _label.numberOfLines = 0;
@@ -36,8 +36,8 @@
     
     [self.view addSubview:_label];
     
-    _textField = [SSDynamicTextField textFieldWithFont:@"Courier"
-                                              baseSize:15.0f];
+    _textField = [UITextField textFieldWithFont:@"Courier"
+                                       baseSize:15.0f];
     _textField.textColor = [UIColor darkGrayColor];
     _textField.backgroundColor = [UIColor lightGrayColor];
     _textField.placeholder = @"Text Field";
@@ -48,8 +48,8 @@
     
     [self.view addSubview:_textField];
     
-    _textView = [SSDynamicTextView textViewWithFont:@"Courier"
-                                           baseSize:14.0f];
+    _textView = [UITextView textViewWithFont:@"Courier"
+                                    baseSize:14.0f];
     _textView.textColor = [UIColor redColor];
     _textView.text = @"Text View";
     _textView.backgroundColor = [UIColor lightGrayColor];

@@ -1,5 +1,5 @@
 //
-//  SSDynamicTextField.m
+//  UITextField+SSTextSize.m
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/6/13.
@@ -8,49 +8,21 @@
 
 #import "SSDynamicText.h"
 
-@interface SSDynamicTextField ()
-
-- (void) setup;
-
-@end
-
-@implementation SSDynamicTextField
-
-- (id)init {
-    if( ( self = [super init] ) ) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
-    if( ( self = [super initWithFrame:frame] ) ) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if( ( self = [super initWithCoder:aDecoder] ) ) {
-        [self setup];
-    }
-    
-    return self;
-}
+@implementation UITextField (SSTextSize)
 
 + (instancetype)textFieldWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicTextField *textField = [SSDynamicTextField new];
+    UITextField *textField = [UITextField new];
     textField.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName
                                                                           size:size];
+    [textField ss_setupDynamicTextSize];
     
     return textField;
 }
 
 + (instancetype)textFieldWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextField *textField = [SSDynamicTextField new];
+    UITextField *textField = [UITextField new];
     textField.defaultFontDescriptor = descriptor;
+    [textField ss_setupDynamicTextSize];
     
     return textField;
 }
@@ -59,7 +31,7 @@
     [self ss_stopObservingTextSizeChanges];
 }
 
-- (void)setup {
+- (void) ss_setupDynamicTextSize {
     __weak typeof (self) weakSelf = self;
     
     SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {

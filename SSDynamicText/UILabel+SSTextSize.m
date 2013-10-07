@@ -1,5 +1,5 @@
 //
-//  SSDynamicLabel.m
+//  UILabel+SSTextSize.m
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/4/13.
@@ -8,48 +8,20 @@
 
 #import "SSDynamicText.h"
 
-@interface SSDynamicLabel ()
-
-- (void) setup;
-
-@end
-
-@implementation SSDynamicLabel
-
-- (id)init {
-    if( ( self = [super init] ) ) {
-        [self setup];
-    }
-  
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
-    if( ( self = [super initWithFrame:frame] ) ) {
-        [self setup];
-    }
-  
-  return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if( ( self = [super initWithCoder:aDecoder] ) ) {
-        [self setup];
-    }
-  
-    return self;
-}
+@implementation UILabel (SSTextSize)
 
 + (instancetype) labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicLabel *label = [SSDynamicLabel new];
+    UILabel *label = [UILabel new];
     label.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
+    [label ss_setupDynamicTextSize];
 
     return label;
 }
 
 + (instancetype)labelWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicLabel *label = [SSDynamicLabel new];
+    UILabel *label = [UILabel new];
     label.defaultFontDescriptor = descriptor;
+    [label ss_setupDynamicTextSize];
   
     return label;
 }
@@ -58,7 +30,7 @@
     [self ss_stopObservingTextSizeChanges];
 }
 
-- (void)setup {
+- (void) ss_setupDynamicTextSize {
     __weak typeof (self) weakSelf = self;
     
     SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {

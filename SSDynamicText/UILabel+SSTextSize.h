@@ -1,5 +1,5 @@
 //
-//  SSDynamicLabel.h
+//  UILabel+SSTextSize.h
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/4/13.
@@ -13,7 +13,13 @@
  * This label adjusts its font size by an offset determined by the user's preferred text size.
  */
 
-@interface SSDynamicLabel : UILabel
+@interface UILabel (SSTextSize)
+
+/**
+ * Add dynamic text size awareness to an existing label.
+ * Or, use one of the constructors below for a new label.
+ */
+- (void) ss_setupDynamicTextSize;
 
 /**
  * Create a dynamic-sizing label that will adjust its size in response to changes
