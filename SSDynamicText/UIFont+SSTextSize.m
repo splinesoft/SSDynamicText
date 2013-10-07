@@ -1,6 +1,6 @@
 //
 //  UIFont+TextSize.m
-//  SSLabel
+//  SSDynamicText
 //
 //  Created by Jonathan Hersh on 5/16/13.
 //  Copyright (c) 2013 Splinesoft. All rights reserved.

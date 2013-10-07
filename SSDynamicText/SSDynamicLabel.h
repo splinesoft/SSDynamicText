@@ -1,6 +1,6 @@
 //
-//  SSLabel.h
-//  SSLabel
+//  SSDynamicLabel.h
+//  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/4/13.
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
@@ -13,15 +13,7 @@
  * This label adjusts its font size by an offset determined by the user's preferred text size.
  */
 
-@interface SSLabel : UILabel
-
-/**
- * The default font descriptor used by this label.
- * Its size is adjusted up (or down) based on the user's preferred text size.
- * Updating this will change the label's font.
- * The two constructors below will create the defaultFontDescriptor for you.
- */
-@property (nonatomic, strong) UIFontDescriptor *defaultFontDescriptor;
+@interface SSDynamicLabel : UILabel
 
 /**
  * Create a dynamic-sizing label that will adjust its size in response to changes

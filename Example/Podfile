@@ -2,4 +2,4 @@ platform :ios, '7.0'
 
 xcodeproj 'SSLabelExample'
 
-pod 'SSLabel', :path => '../'
+pod 'SSDynamicText', :path => '../'

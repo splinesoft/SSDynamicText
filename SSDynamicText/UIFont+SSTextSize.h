@@ -1,6 +1,6 @@
 //
 //  UIFont+TextSize.h
-//  SSLabel
+//  SSDynamicText
 //
 //  Created by Jonathan Hersh on 5/16/13.
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
@@ -15,7 +15,7 @@
  * The actual size of the returned font is adjusted by
  * the user's current preferred font size (specified in Settings.app).
  * @param fontName Name of the font to use
- * @param size Base size to use, offset by the user's preferred size.
+ * @param baseSize Base size to use, offset by the user's preferred size.
  */
 + (instancetype) dynamicFontWithName:(NSString *)fontName 
                             baseSize:(CGFloat)baseSize;

@@ -1,6 +1,6 @@
 //
 //  UIApplication+TextSize.h
-//  SSLabel
+//  SSDynamicText
 //
 //  Created by Jonathan Hersh on 10/4/13.
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
