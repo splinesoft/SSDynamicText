@@ -32,6 +32,9 @@
 }
 
 - (void) ss_setupDynamicTextSize {
+    if( !self.defaultFontDescriptor )
+        self.defaultFontDescriptor = self.font.fontDescriptor;
+  
     __weak typeof (self) weakSelf = self;
     
     SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {
