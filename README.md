@@ -2,7 +2,7 @@ SSDynamicText
 =============
 
 [![Build Status](https://travis-ci.org/splinesoft/SSDynamicText.png?branch=master)](https://travis-ci.org/splinesoft/SSDynamicText)
-
+ 
 iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/) is pretty neat. Also pretty neat is dynamic text that responds to the preferred text size that the user specified in Settings.app.
 
 What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue. What if you have custom fonts and want to respect the user's text size preference?
