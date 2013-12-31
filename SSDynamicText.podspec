@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.source_files = 'SSDynamicText/*.{h,m}'
   s.frameworks   = 'Foundation', 'UIKit'
   s.ios.deployment_target = '7.0'
+  s.social_media_url = 'https://twitter.com/jhersh'
 end
