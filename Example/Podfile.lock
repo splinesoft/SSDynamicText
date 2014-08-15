@@ -1,0 +1,14 @@
+PODS:
+  - SSDynamicText (0.1.0)
+
+DEPENDENCIES:
+  - SSDynamicText (from `../`)
+
+EXTERNAL SOURCES:
+  SSDynamicText:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SSDynamicText: a3c35118b32506bf39e38113ab919cd41b8adde2
+
+COCOAPODS: 0.33.1
