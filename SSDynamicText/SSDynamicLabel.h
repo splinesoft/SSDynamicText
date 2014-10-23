@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 /**
  * In iOS 7, the user can set his or her preferred text size in Settings.app.

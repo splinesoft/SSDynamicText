@@ -20,8 +20,7 @@
 @implementation SSDynamicLabel
 
 - (id)init {
-    self = [super init];
-    if(self) {
+    if ((self = [super init])) {
         [self setup];
     }
   
@@ -29,15 +28,14 @@
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if(self) {
+    if ((self = [super initWithFrame:frame])) {
         [self setup];
     }
+    
     return self;
 }
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     if (self.fontName && self.baseSize) {
         self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName size:self.baseSize];
         [self setup];

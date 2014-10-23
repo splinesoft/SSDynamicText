@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5EE286F6180239B900D286ED"
-               BuildableName = "SSDynamicTextExampleTests.xctest"
-               BlueprintName = "SSDynamicTextExampleTests"
+               BuildableName = "SSDynamicTextTests.xctest"
+               BlueprintName = "SSDynamicTextTests"
                ReferencedContainer = "container:SSDynamicTextExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
