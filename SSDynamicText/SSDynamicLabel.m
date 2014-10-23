@@ -10,6 +10,9 @@
 
 @interface SSDynamicLabel ()
 
+@property (nonatomic, strong) NSString *fontName;
+@property (nonatomic, assign) CGFloat baseSize;
+
 - (void) setup;
 
 @end
@@ -17,7 +20,8 @@
 @implementation SSDynamicLabel
 
 - (id)init {
-    if( ( self = [super init] ) ) {
+    self = [super init];
+    if(self) {
         [self setup];
     }
   
@@ -25,19 +29,19 @@
 }
 
 - (id)initWithFrame:(CGRect)frame {
-    if( ( self = [super initWithFrame:frame] ) ) {
+    self = [super initWithFrame:frame];
+    if(self) {
         [self setup];
     }
-  
-  return self;
+    return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if( ( self = [super initWithCoder:aDecoder] ) ) {
+- (void)awakeFromNib
+{
+    if (self.fontName && self.baseSize) {
+        self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName size:self.baseSize];
         [self setup];
     }
-  
-    return self;
 }
 
 + (instancetype) labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {

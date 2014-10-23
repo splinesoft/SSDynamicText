@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface UIView (SSTextSize)
 
 typedef void (^SSTextSizeChangedBlock) (NSInteger);
