@@ -6,8 +6,7 @@
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
-#ifndef Pods_SSDynamicText_h
-#define Pods_SSDynamicText_h
+#pragma once
 
 #import "UIApplication+SSTextSize.h"
 #import "UIFont+SSTextSize.h"
@@ -16,5 +15,3 @@
 #import "SSDynamicLabel.h"
 #import "SSDynamicTextField.h"
 #import "SSDynamicTextView.h"
-
-#endif

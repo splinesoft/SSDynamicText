@@ -27,8 +27,9 @@
   
     NSInteger delta = (NSInteger)[fontSizes indexOfObject:self.preferredContentSizeCategory];
   
-    if( delta == NSNotFound )
-      return 0;
+    if (delta == NSNotFound) {
+        return 0;
+    }
   
     // Default size is 'Large'
     delta -= [fontSizes indexOfObject:UIContentSizeCategoryLarge];
