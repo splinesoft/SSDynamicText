@@ -68,14 +68,14 @@ NSString * const kSSDynamicDefaultBaseSize = @"SSDynamicDefaultBaseSize";
     [self setNeedsDisplay];
 }
 
-#pragma mark - DefaultFontName
+#pragma mark - Default Fonts
 
-- (NSString *)defaultFontName {
+- (NSString *) ss_defaultFontName {
     NSString *defaultFontName = [[[NSBundle mainBundle] infoDictionary] objectForKey:kSSDynamicDefaultFontName];
-    return (defaultFontName ?: [UIFont systemFontOfSize:self.defaultBaseSize].fontName);
+    return (defaultFontName ?: [UIFont systemFontOfSize:[self ss_defaultBaseSize]].fontName);
 }
 
-- (CGFloat)defaultBaseSize {
+- (CGFloat) ss_defaultBaseSize {
     CGFloat defaultBaseSize = [[[[NSBundle mainBundle] infoDictionary] objectForKey:kSSDynamicDefaultBaseSize] floatValue];
     return (defaultBaseSize == 0.0 ? 16.f : defaultBaseSize);
 }

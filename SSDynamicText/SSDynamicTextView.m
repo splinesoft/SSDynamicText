@@ -10,7 +10,7 @@
 
 @interface SSDynamicTextView ()
 
-@property (nonatomic, strong) NSString *fontName;
+@property (nonatomic, copy) NSString *fontName;
 @property (nonatomic, assign) CGFloat baseSize;
 
 - (void) setup;
@@ -36,8 +36,8 @@
 }
 
 - (void)awakeFromNib {
-    self.fontName = (self.fontName ?: self.defaultFontName);
-    self.baseSize = (self.baseSize ?: self.defaultBaseSize);
+    self.fontName = (self.fontName ?: [self ss_defaultFontName]);
+    self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
     
     self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName
                                                                      size:self.baseSize];

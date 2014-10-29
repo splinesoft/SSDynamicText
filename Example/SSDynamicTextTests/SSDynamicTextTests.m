@@ -19,9 +19,14 @@ CGFloat    const kTestFontSize = 14.f;
 @end
 
 @implementation SSDynamicTextTests
+{
+    SSDynamicLabel *label;
+}
 
 - (void)setUp {
     [super setUp];
+    
+    label = [SSDynamicLabel labelWithFont:kTestFontName baseSize:kTestFontSize];
 }
 
 - (void)tearDown {
@@ -38,6 +43,11 @@ CGFloat    const kTestFontSize = 14.f;
 {
     // This will probably fail if you've set a custom preferred font size in the simulator
     XCTAssertEqual(0, [[UIApplication sharedApplication] preferredFontSizeDelta], @"Font size delta should be zero");
+}
+
+- (void)testInfoBundleDefaultFontSize
+{
+    XCTAssertEqualWithAccuracy(16, [label ss_defaultBaseSize], FLT_EPSILON, @"Default base size should be 16");
 }
 
 @end
