@@ -36,4 +36,16 @@ typedef void (^SSTextSizeChangedBlock) (NSInteger);
  */
 - (void) preferredContentSizeDidChange;
 
+/**
+ * Default FontName if set in Info.plist or systemFontName
+ * Key: SSDynamicDefaultFontName
+ */
+- (NSString *)defaultFontName;
+
+/**
+ * DefaultBaseSize if set in Info.plist or 16.0
+ * Key: SSDynamicDefaultBaseSize
+ */
+- (CGFloat)defaultBaseSize;
+
 @end

@@ -36,10 +36,12 @@
 }
 
 - (void)awakeFromNib {
-    if (self.fontName && self.baseSize) {
-        self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName size:self.baseSize];
-        [self setup];
-    }
+    self.fontName = (self.fontName) ? self.fontName : self.defaultFontName;
+    self.baseSize = (self.baseSize) ? self.baseSize : self.defaultBaseSize;
+    
+    self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName
+                                                                     size:self.baseSize];
+    [self setup];
 }
 
 + (instancetype) labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {

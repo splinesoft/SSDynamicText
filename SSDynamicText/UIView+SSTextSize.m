@@ -64,4 +64,17 @@ static char kDefaultFontDescriptorKey;
     [self setNeedsDisplay];
 }
 
+#pragma mark - DefaultFontName
+
+- (NSString *)defaultFontName {
+    NSString *defaultFontName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"SSDynamicDefaultFontName"];
+    return (defaultFontName) ? defaultFontName : [UIFont systemFontOfSize:self.defaultBaseSize].fontName;
+}
+
+- (CGFloat)defaultBaseSize {
+    float defaultBaseSize = [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"SSDynamicDefaultBaseSize"] floatValue];
+    defaultBaseSize = (defaultBaseSize == 0.0) ? 16.0 : defaultBaseSize;
+    return defaultBaseSize;
+}
+
 @end
