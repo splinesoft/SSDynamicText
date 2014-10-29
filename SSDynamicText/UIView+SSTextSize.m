@@ -13,6 +13,9 @@
 static char kTextSizeChangedKey;
 static char kDefaultFontDescriptorKey;
 
+NSString * const kSSDynamicDefaultFontName = @"SSDynamicDefaultFontName";
+NSString * const kSSDynamicDefaultBaseSize = @"SSDynamicDefaultBaseSize";
+
 @implementation UIView (SSTextSize)
 
 #pragma mark - default font descriptor
@@ -55,10 +58,11 @@ static char kDefaultFontDescriptorKey;
 - (void)preferredContentSizeDidChange {
     NSInteger newDelta = [[UIApplication sharedApplication] preferredFontSizeDelta];
     
-    SSTextSizeChangedBlock changeBlock = objc_getAssociatedObject( self, &kTextSizeChangedKey );
+    SSTextSizeChangedBlock changeBlock = (SSTextSizeChangedBlock)objc_getAssociatedObject( self, &kTextSizeChangedKey );
     
-    if( changeBlock )
-        changeBlock( newDelta );
+    if (changeBlock) {
+        changeBlock(newDelta);
+    }
     
     [self invalidateIntrinsicContentSize];
     [self setNeedsDisplay];
@@ -67,14 +71,13 @@ static char kDefaultFontDescriptorKey;
 #pragma mark - DefaultFontName
 
 - (NSString *)defaultFontName {
-    NSString *defaultFontName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"SSDynamicDefaultFontName"];
-    return (defaultFontName) ? defaultFontName : [UIFont systemFontOfSize:self.defaultBaseSize].fontName;
+    NSString *defaultFontName = [[[NSBundle mainBundle] infoDictionary] objectForKey:kSSDynamicDefaultFontName];
+    return (defaultFontName ?: [UIFont systemFontOfSize:self.defaultBaseSize].fontName);
 }
 
 - (CGFloat)defaultBaseSize {
-    float defaultBaseSize = [[[[NSBundle mainBundle] infoDictionary] objectForKey:@"SSDynamicDefaultBaseSize"] floatValue];
-    defaultBaseSize = (defaultBaseSize == 0.0) ? 16.0 : defaultBaseSize;
-    return defaultBaseSize;
+    CGFloat defaultBaseSize = [[[[NSBundle mainBundle] infoDictionary] objectForKey:kSSDynamicDefaultBaseSize] floatValue];
+    return (defaultBaseSize == 0.0 ? 16.f : defaultBaseSize);
 }
 
 @end

@@ -8,6 +8,9 @@
 
 @import UIKit;
 
+UIKIT_EXTERN NSString * const kSSDynamicDefaultFontName;
+UIKIT_EXTERN NSString * const kSSDynamicDefaultBaseSize;
+
 @interface UIView (SSTextSize)
 
 typedef void (^SSTextSizeChangedBlock) (NSInteger);
@@ -37,14 +40,14 @@ typedef void (^SSTextSizeChangedBlock) (NSInteger);
 - (void) preferredContentSizeDidChange;
 
 /**
- * Default FontName if set in Info.plist or systemFontName
- * Key: SSDynamicDefaultFontName
+ * Default FontName if set in Info.plist or systemFontName if not set
+ * Key: kSSDynamicDefaultFontName
  */
 - (NSString *)defaultFontName;
 
 /**
- * DefaultBaseSize if set in Info.plist or 16.0
- * Key: SSDynamicDefaultBaseSize
+ * DefaultBaseSize if set in Info.plist or 16.0 if not set
+ * Key: kSSDynamicDefaultBaseSize
  */
 - (CGFloat)defaultBaseSize;
 

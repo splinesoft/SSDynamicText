@@ -36,8 +36,8 @@
 }
 
 - (void)awakeFromNib {
-    self.fontName = (self.fontName) ? self.fontName : self.defaultFontName;
-    self.baseSize = (self.baseSize) ? self.baseSize : self.defaultBaseSize;
+    self.fontName = (self.fontName ?: self.defaultFontName);
+    self.baseSize = (self.baseSize ?: self.defaultBaseSize);
     
     self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName
                                                                      size:self.baseSize];
