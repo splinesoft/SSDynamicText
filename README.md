@@ -7,7 +7,7 @@ iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentati
 
 What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue. What if you have custom fonts and want to respect the user's text size preference?
 
-Enter SSDynamicText, a collection of simple `UILabel`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
+SSDynamicText is a collection of simple `UILabel`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
 
 ## Install
 
