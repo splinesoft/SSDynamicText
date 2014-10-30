@@ -4,7 +4,7 @@ platform :ios, '7.0'
 
 xcodeproj 'SSDynamicTextExample'
 
-pod 'SSDynamicText', :path => '../'
+pod 'SSDynamicText', :path => '../SSDynamicText.podspec'
 
 target :SSDynamicTextTests, :exclusive => true do
     pod 'Expecta'
