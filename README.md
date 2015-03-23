@@ -1,7 +1,7 @@
 SSDynamicText
 =============
 
-[![Build Status](https://travis-ci.org/splinesoft/SSDynamicText.png?branch=master)](https://travis-ci.org/splinesoft/SSDynamicText)
+[![Circle CI](https://circleci.com/gh/splinesoft/SSDynamicText.svg?style=svg&circle-token=cc2c1e6a7fedf6ad4cd604ee57d923ad647c78d4)](https://circleci.com/gh/splinesoft/SSDynamicText) [![Coverage Status](https://coveralls.io/repos/splinesoft/SSDynamicText/badge.svg)](https://coveralls.io/r/splinesoft/SSDynamicText)
  
 iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/) is pretty neat. Also pretty neat is dynamic text that responds to the preferred text size that the user specified in Settings.app.
 

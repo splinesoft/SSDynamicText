@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import <Expecta.h>
-#import "SSDynamicText.h"
+#import <SSDynamicText.h>
 
 NSString * const kTestFontName = @"Avenir";
 CGFloat    const kTestFontSize = 14.f;
