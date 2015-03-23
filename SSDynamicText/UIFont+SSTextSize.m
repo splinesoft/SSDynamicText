@@ -1,5 +1,5 @@
 //
-//  UIFont+TextSize.m
+//  UIFont+SSTextSize.m
 //  SSDynamicText
 //
 //  Created by Jonathan Hersh on 5/16/13.
