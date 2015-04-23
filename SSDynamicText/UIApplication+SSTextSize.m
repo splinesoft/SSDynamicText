@@ -21,7 +21,12 @@
           UIContentSizeCategoryLarge,
           UIContentSizeCategoryExtraLarge,
           UIContentSizeCategoryExtraExtraLarge,
-          UIContentSizeCategoryExtraExtraExtraLarge
+          UIContentSizeCategoryExtraExtraExtraLarge,
+          UIContentSizeCategoryAccessibilityMedium,
+          UIContentSizeCategoryAccessibilityLarge,
+          UIContentSizeCategoryAccessibilityExtraLarge,
+          UIContentSizeCategoryAccessibilityExtraExtraLarge,
+          UIContentSizeCategoryAccessibilityExtraExtraExtraLarge,
         ];
     });
   
