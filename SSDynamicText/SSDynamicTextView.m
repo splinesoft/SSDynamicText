@@ -36,6 +36,13 @@
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+
+    if (self.font) {
+        self.fontName = self.font.fontName;
+        self.baseSize = self.font.pointSize;
+    }
+    
     self.fontName = (self.fontName ?: [self ss_defaultFontName]);
     self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
     
