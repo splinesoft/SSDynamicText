@@ -36,11 +36,18 @@
 }
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
+
+    if (self.font) {
+        self.fontName = self.font.fontName;
+        self.baseSize = self.font.pointSize;
+    }
+    
     self.fontName = (self.fontName ?: [self ss_defaultFontName]);
     self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
     
-    self.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:self.fontName
-                                                                     size:self.baseSize];
+    self.defaultFontDescriptor = (self.font.fontDescriptor ?: [UIFontDescriptor fontDescriptorWithName:self.fontName
+                                                                                                  size:self.baseSize]);
     [self setup];
 }
 
