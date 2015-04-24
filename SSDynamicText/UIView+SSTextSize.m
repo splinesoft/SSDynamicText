@@ -10,7 +10,7 @@
 #import "UIApplication+SSTextSize.h"
 #import <objc/runtime.h>
 
-static char kTextSizeChangedKey;
+static char kTextSizeChangedBlockKey;
 static char kDefaultFontDescriptorKey;
 
 NSString * const kSSDynamicDefaultFontName = @"SSDynamicDefaultFontName";
@@ -21,11 +21,11 @@ NSString * const kSSDynamicDefaultBaseSize = @"SSDynamicDefaultBaseSize";
 #pragma mark - default font descriptor
 
 - (UIFontDescriptor *)defaultFontDescriptor {
-    return (UIFontDescriptor *)objc_getAssociatedObject( self, &kDefaultFontDescriptorKey );
+    return (UIFontDescriptor *)objc_getAssociatedObject(self, &kDefaultFontDescriptorKey);
 }
 
 - (void)setDefaultFontDescriptor:(UIFontDescriptor *)defaultFontDescriptor {
-    objc_setAssociatedObject( self, &kDefaultFontDescriptorKey, defaultFontDescriptor, OBJC_ASSOCIATION_COPY_NONATOMIC );
+    objc_setAssociatedObject(self, &kDefaultFontDescriptorKey, defaultFontDescriptor, OBJC_ASSOCIATION_COPY_NONATOMIC);
     
     [self preferredContentSizeDidChange];
 }
@@ -37,7 +37,7 @@ NSString * const kSSDynamicDefaultBaseSize = @"SSDynamicDefaultBaseSize";
     
     [self ss_stopObservingTextSizeChanges];
     
-    objc_setAssociatedObject( self, &kTextSizeChangedKey, block, OBJC_ASSOCIATION_COPY );
+    objc_setAssociatedObject(self, &kTextSizeChangedBlockKey, block, OBJC_ASSOCIATION_COPY);
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(preferredContentSizeDidChange)
@@ -48,7 +48,7 @@ NSString * const kSSDynamicDefaultBaseSize = @"SSDynamicDefaultBaseSize";
 }
 
 - (void)ss_stopObservingTextSizeChanges {
-    objc_setAssociatedObject( self, &kTextSizeChangedKey, nil, OBJC_ASSOCIATION_ASSIGN );
+    objc_setAssociatedObject(self, &kTextSizeChangedBlockKey, nil, OBJC_ASSOCIATION_ASSIGN);
     
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:UIContentSizeCategoryDidChangeNotification
@@ -56,9 +56,9 @@ NSString * const kSSDynamicDefaultBaseSize = @"SSDynamicDefaultBaseSize";
 }
 
 - (void)preferredContentSizeDidChange {
-    NSInteger newDelta = [[UIApplication sharedApplication] preferredFontSizeDelta];
+    NSInteger newDelta = [UIApplication sharedApplication].preferredFontSizeDelta;
     
-    SSTextSizeChangedBlock changeBlock = (SSTextSizeChangedBlock)objc_getAssociatedObject( self, &kTextSizeChangedKey );
+    SSTextSizeChangedBlock changeBlock = (SSTextSizeChangedBlock)objc_getAssociatedObject(self, &kTextSizeChangedBlockKey);
     
     if (changeBlock) {
         changeBlock(newDelta);

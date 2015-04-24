@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25DE1D35E98A96562C2C3C9F /* libPods-SSDynamicTextExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A40B656FCA8C692363D81440 /* libPods-SSDynamicTextExample.a */; };
 		5E90DACD19F9655600257F8E /* SSDynamicTextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E90DACC19F9655600257F8E /* SSDynamicTextTests.m */; };
 		5EE286D7180239B800D286ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286D6180239B800D286ED /* Foundation.framework */; };
 		5EE286D9180239B800D286ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286D8180239B800D286ED /* CoreGraphics.framework */; };
@@ -16,8 +17,7 @@
 		5EE286E7180239B800D286ED /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE286E6180239B800D286ED /* SSAppDelegate.m */; };
 		5EE286F0180239B900D286ED /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE286EF180239B900D286ED /* SSViewController.m */; };
 		5EE286F2180239B900D286ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE286F1180239B900D286ED /* Images.xcassets */; };
-		692F3E0D80C1590A4DE561C0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A371894CDFACBE35D57ACFE /* libPods.a */; };
-		939850E62DA37E5B53D3C96C /* libPods-SSDynamicTextTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B06167F057B251A55DBCA6 /* libPods-SSDynamicTextTests.a */; };
+		9CE3D14E59CCC217CA87082B /* libPods-SSDynamicTextTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3867F404C9867F021E57D92D /* libPods-SSDynamicTextTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,7 @@
 /* Begin PBXFileReference section */
 		1E390AB98ADA6109AF215F89 /* Pods-SSDynamicTextTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextTests/Pods-SSDynamicTextTests.release.xcconfig"; sourceTree = "<group>"; };
 		37C2BAE4E5B958EC73818AFA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3867F404C9867F021E57D92D /* libPods-SSDynamicTextTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46106B6E541D73855CEB3345 /* Pods-SSDynamicTextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextTests/Pods-SSDynamicTextTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E90DAC819F9655600257F8E /* SSDynamicTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSDynamicTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E90DACB19F9655600257F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,8 +52,9 @@
 		5EE286EF180239B900D286ED /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
 		5EE286F1180239B900D286ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5EE286F8180239B900D286ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6A371894CDFACBE35D57ACFE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9B06167F057B251A55DBCA6 /* libPods-SSDynamicTextTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7822CB52AD889E7A1D57DED4 /* Pods-SSDynamicTextExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample.release.xcconfig"; sourceTree = "<group>"; };
+		8CD54212E04269E8F94B08C4 /* Pods-SSDynamicTextExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample.debug.xcconfig"; sourceTree = "<group>"; };
+		A40B656FCA8C692363D81440 /* libPods-SSDynamicTextExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E051720771E3313A9C06AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				939850E62DA37E5B53D3C96C /* libPods-SSDynamicTextTests.a in Frameworks */,
+				9CE3D14E59CCC217CA87082B /* libPods-SSDynamicTextTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +74,7 @@
 				5EE286D9180239B800D286ED /* CoreGraphics.framework in Frameworks */,
 				5EE286DB180239B800D286ED /* UIKit.framework in Frameworks */,
 				5EE286D7180239B800D286ED /* Foundation.framework in Frameworks */,
-				692F3E0D80C1590A4DE561C0 /* libPods.a in Frameworks */,
+				25DE1D35E98A96562C2C3C9F /* libPods-SSDynamicTextExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +125,8 @@
 				5EE286D8180239B800D286ED /* CoreGraphics.framework */,
 				5EE286DA180239B800D286ED /* UIKit.framework */,
 				5EE286F8180239B900D286ED /* XCTest.framework */,
-				6A371894CDFACBE35D57ACFE /* libPods.a */,
-				E9B06167F057B251A55DBCA6 /* libPods-SSDynamicTextTests.a */,
+				A40B656FCA8C692363D81440 /* libPods-SSDynamicTextExample.a */,
+				3867F404C9867F021E57D92D /* libPods-SSDynamicTextTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +162,8 @@
 				37C2BAE4E5B958EC73818AFA /* Pods.release.xcconfig */,
 				46106B6E541D73855CEB3345 /* Pods-SSDynamicTextTests.debug.xcconfig */,
 				1E390AB98ADA6109AF215F89 /* Pods-SSDynamicTextTests.release.xcconfig */,
+				8CD54212E04269E8F94B08C4 /* Pods-SSDynamicTextExample.debug.xcconfig */,
+				7822CB52AD889E7A1D57DED4 /* Pods-SSDynamicTextExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -303,7 +307,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C65C1008F51074A92FC0E4CF /* Copy Pods Resources */ = {
@@ -484,7 +488,7 @@
 		};
 		5EE28709180239B900D286ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0E051720771E3313A9C06AF /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 8CD54212E04269E8F94B08C4 /* Pods-SSDynamicTextExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -500,7 +504,7 @@
 		};
 		5EE2870A180239B900D286ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37C2BAE4E5B958EC73818AFA /* Pods.release.xcconfig */;
+			baseConfigurationReference = 7822CB52AD889E7A1D57DED4 /* Pods-SSDynamicTextExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
