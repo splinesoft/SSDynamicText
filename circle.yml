@@ -3,16 +3,13 @@ machine:
     LANG: en_US.UTF-8
     LC_CTYPE: en_US.UTF-8
   xcode:
-    version: "6.2"
+    version: "6.3.1"
 dependencies:
   pre:
-    - xcrun instruments -w "iPhone 6 (8.2 Simulator)" || exit 0
+    - xcrun instruments -w "iPhone 6 (8.3 Simulator)" || exit 0
   override:    
-    - sudo gem install cocoapods xcpretty obcd slather -N
+    - sudo gem install cocoapods xcpretty obcd -N
     - pod install --project-directory=Example
-  cache_directories:
-    - ~/.cocoapods
-    - Example/Pods
 test:
   override:
     - set -o pipefail && xcodebuild -workspace Example/SSDynamicTextExample.xcworkspace
@@ -21,5 +18,8 @@ test:
       --report junit --output ${CIRCLE_TEST_REPORTS}/junit.xml
     - pod lib lint --quick
     - obcd --path SSDynamicText find HeaderStyle
-  post:
-    - slather
+deployment:
+  codecov:
+    branch: /.*/
+    commands:
+      - bash <(curl -s https://codecov.io/bash)
