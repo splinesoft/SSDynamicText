@@ -1,6 +1,6 @@
 PODS:
-  - Expecta (0.4.2)
-  - SSDynamicText (0.3.0)
+  - Expecta (1.0.0)
+  - SSDynamicText (0.3.1)
 
 DEPENDENCIES:
   - Expecta
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../SSDynamicText.podspec"
 
 SPEC CHECKSUMS:
-  Expecta: 78b4e8b0c8291fa4524d7f74016b6065c2e391ec
-  SSDynamicText: 71b89cfb9643b7eda971655e5c1d680190e5e1e2
+  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  SSDynamicText: 734fa66123a301c79417052d5627ba5a611aeabe
 
 COCOAPODS: 0.37.2
