@@ -46,7 +46,7 @@
 }
 
 + (instancetype) textViewWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicTextView *textView = [SSDynamicTextView new];
+    SSDynamicTextView *textView = [self new];
     textView.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName
                                                                          size:size];
     
@@ -54,7 +54,7 @@
 }
 
 + (instancetype)textViewWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextView *textView = [SSDynamicTextView new];
+    SSDynamicTextView *textView = [self new];
     textView.defaultFontDescriptor = descriptor;
     
     return textView;

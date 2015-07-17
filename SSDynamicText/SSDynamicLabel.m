@@ -46,14 +46,14 @@
 }
 
 + (instancetype) labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicLabel *label = [SSDynamicLabel new];
+    SSDynamicLabel *label = [self new];
     label.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
 
     return label;
 }
 
 + (instancetype)labelWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicLabel *label = [SSDynamicLabel new];
+    SSDynamicLabel *label = [self new];
     label.defaultFontDescriptor = descriptor;
   
     return label;

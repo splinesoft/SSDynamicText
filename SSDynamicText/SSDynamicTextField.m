@@ -46,7 +46,7 @@
 }
 
 + (instancetype)textFieldWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicTextField *textField = [SSDynamicTextField new];
+    SSDynamicTextField *textField = [self new];
     textField.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName
                                                                           size:size];
     
@@ -54,7 +54,7 @@
 }
 
 + (instancetype)textFieldWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextField *textField = [SSDynamicTextField new];
+    SSDynamicTextField *textField = [self new];
     textField.defaultFontDescriptor = descriptor;
     
     return textField;
