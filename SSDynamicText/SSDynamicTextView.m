@@ -19,15 +19,7 @@
 
 @implementation SSDynamicTextView
 
-- (id)init {
-    if ((self = [super init])) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         [self setup];
     }
@@ -54,7 +46,7 @@
 }
 
 + (instancetype) textViewWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicTextView *textView = [SSDynamicTextView new];
+    SSDynamicTextView *textView = [self new];
     textView.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName
                                                                          size:size];
     
@@ -62,7 +54,7 @@
 }
 
 + (instancetype)textViewWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextView *textView = [SSDynamicTextView new];
+    SSDynamicTextView *textView = [self new];
     textView.defaultFontDescriptor = descriptor;
     
     return textView;

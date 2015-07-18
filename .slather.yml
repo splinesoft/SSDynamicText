@@ -1,5 +1,0 @@
-ci_service: circleci
-coverage_service: coveralls
-xcodeproj: Example/SSDynamicTextExample.xcodeproj
-source_directory: SSDynamicText
-ci_access_token: 3AHJ47t4wacxvyJ2Fe1mUARUI8D2uOUzT
