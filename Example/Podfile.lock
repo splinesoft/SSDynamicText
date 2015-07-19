@@ -1,6 +1,6 @@
 PODS:
   - Expecta (1.0.0)
-  - SSDynamicText (0.3.1)
+  - SSDynamicText (0.4.0)
 
 DEPENDENCIES:
   - Expecta
@@ -12,6 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
-  SSDynamicText: 734fa66123a301c79417052d5627ba5a611aeabe
+  SSDynamicText: 5981a0d801c081bc3966241792d9c08d2c2b2cfe
 
 COCOAPODS: 0.38.0
