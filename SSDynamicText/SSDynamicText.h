@@ -15,3 +15,4 @@
 #import "SSDynamicLabel.h"
 #import "SSDynamicTextField.h"
 #import "SSDynamicTextView.h"
+#import "SSDynamicButton.h"

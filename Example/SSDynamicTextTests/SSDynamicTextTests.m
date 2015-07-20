@@ -37,6 +37,7 @@ CGFloat    const kTestFontSize = 14.f;
     XCTAssertNotNil([SSDynamicLabel labelWithFont:kTestFontName baseSize:kTestFontSize], @"Label should initialize");
     XCTAssertNotNil([SSDynamicTextField textFieldWithFont:kTestFontName baseSize:kTestFontSize], @"Text field should initialize");
     XCTAssertNotNil([SSDynamicTextView textViewWithFont:kTestFontName baseSize:kTestFontSize], @"Text view should initialize");
+    XCTAssertNotNil([SSDynamicButton buttonWithFont:kTestFontName baseSize:kTestFontSize], @"Button should initialize");
 }
 
 - (void)testApplicationFontSizeDelta

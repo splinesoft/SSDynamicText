@@ -39,6 +39,23 @@ UIFontDescriptor *aDescriptor = [UIFontDescriptor fontDescriptorWithName:@"Couri
 SSDynamicLabel *otherLabel = [SSDynamicLabel labelWithFontDescriptor:aDescriptor];
 ```
 
+## SSDynamicButton
+
+A button with a title label that responds when the user changes her preferred text size. Check out `Example` for a full example.
+
+```objc
+
+/**
+ * Create a dynamic auto-sizing button using a custom font and a base font size.
+ * The font size will be adjusted up (or down) based on the user's preferred size.
+ * If the user leaves the app, switches to Settings, and changes preferred size,
+ * the button will automatically update its size when the app returns to foreground.
+ */
+SSDynamicButton *myButton = [SSDynamicButton labelWithFont:@"Courier" 
+                                                  baseSize:16.0f];
+[myButton setText:@"Auto-sizing text!" forControlState:UIControlStateNormal];                                     
+```
+
 ## SSDynamicTextField
 
 A text field that responds when the user changes her preferred text size. Check out `Example` for a full example.
