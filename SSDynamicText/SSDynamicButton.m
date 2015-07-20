@@ -4,7 +4,6 @@
 //
 //  Created by Adam Grzegorowski on 18/07/15.
 //
-//
 
 #import "SSDynamicButton.h"
 #import "UIView+SSTextSize.h"
