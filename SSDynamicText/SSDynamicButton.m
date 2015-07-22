@@ -47,10 +47,9 @@
 }
 
 + (instancetype)buttonWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicButton *button = [self new];
-    button.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
 
-    return button;
+    return [self buttonWithFontDescriptor:fontDescriptor];
 }
 
 + (instancetype)buttonWithFontDescriptor:(UIFontDescriptor *)descriptor {
