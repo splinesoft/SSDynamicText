@@ -12,6 +12,7 @@
 @interface SSViewController ()
 
 @property (nonatomic, strong) SSDynamicLabel *label;
+@property (nonatomic, strong) SSDynamicButton *button;
 @property (nonatomic, strong) SSDynamicTextField *textField;
 @property (nonatomic, strong) SSDynamicTextView *textView;
 
@@ -35,14 +36,25 @@
     }];
     
     [self.view addSubview:_label];
-    
+
+    _button = [SSDynamicButton buttonWithFont:@"Courier" baseSize:16.0f];
+    _button.titleLabel.text = @"Button";
+    _button.titleLabel.textColor = [UIColor blueColor];
+    _button.backgroundColor = [UIColor lightGrayColor];
+    [_button setFrame:(CGRect){
+        {10, CGRectGetMaxY(_label.frame) + 10},
+        {CGRectGetWidth(self.view.frame) - 20, 44}
+    }];
+
+    [self.view addSubview:_button];
+
     _textField = [SSDynamicTextField textFieldWithFont:@"Courier"
                                               baseSize:15.0f];
     _textField.textColor = [UIColor darkGrayColor];
     _textField.backgroundColor = [UIColor lightGrayColor];
     _textField.placeholder = @"Text Field";
     [_textField setFrame:(CGRect){
-        {10, CGRectGetMaxY(_label.frame) + 10},
+        {10, CGRectGetMaxY(_button.frame) + 10},
         {CGRectGetWidth(self.view.frame) - 20, 32}
     }];
     
