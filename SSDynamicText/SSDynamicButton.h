@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-/*
- While creating this button in xib, don't forget to change it type to Custom !!
+/**
+ * While creating this button in xib, don't forget to change it type to Custom !!
  */
 @interface SSDynamicButton : UIButton
 
