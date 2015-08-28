@@ -7,21 +7,37 @@
 //
 
 #import "SSDynamicText.h"
+#import "SSDynamicTextSizeChanger.h"
 
 @interface SSDynamicTextView ()
 
-@property (nonatomic, copy) NSString *fontName;
-@property (nonatomic, assign) CGFloat baseSize;
-
-- (void) setup;
+@property (nonatomic, copy) NSAttributedString *baseAttributedText;
+@property (nonatomic, strong) SSDynamicTextSizeChanger *textSizeChanger;
 
 @end
 
 @implementation SSDynamicTextView
 
+- (SSDynamicTextSizeChanger *)textSizeChanger {
+    if (_textSizeChanger == nil) {
+        _textSizeChanger = [self createTextChanger];
+    }
+    return _textSizeChanger;
+}
+
+- (void)setDefaultFontDescriptor:(UIFontDescriptor *)defaultFontDescriptor {
+    self.textSizeChanger.defaultFontDescriptor = defaultFontDescriptor;
+    [super setDefaultFontDescriptor:defaultFontDescriptor];
+}
+
+- (void)setFont:(UIFont *)font {
+    [super setFont:font];
+    [self setupBaseFontBasedOnCurrentFont];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-        [self setup];
+        [self startObservingTextSizeChanged];
     }
     
     return self;
@@ -30,19 +46,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 
-    if (self.font) {
-        self.fontName = self.font.fontName;
-        self.baseSize = self.font.pointSize;
-    }
-    
-    self.fontName = (self.fontName ?: [self ss_defaultFontName]);
-    self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
-    
-    self.defaultFontDescriptor = (self.font.fontDescriptor ?:
-                                  [UIFontDescriptor fontDescriptorWithName:self.fontName
-                                                                      size:self.baseSize]);
-
-    [self setup];
+    [self setupBaseFontBasedOnCurrentFont];
+    [self startObservingTextSizeChanged];
 }
 
 + (instancetype)textViewWithFont:(NSString *)fontName baseSize:(CGFloat)size {
@@ -62,18 +67,51 @@
     [self ss_stopObservingTextSizeChanges];
 }
 
-- (void)setup {
-    __weak typeof (self) weakSelf = self;
-    
-    SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {
-        CGFloat preferredSize = [weakSelf.defaultFontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute] floatValue];
-        preferredSize += newDelta;
-        
-        weakSelf.font = [UIFont fontWithDescriptor:weakSelf.defaultFontDescriptor
-                                              size:preferredSize];
+#pragma mark - Private Methods
+
+- (SSDynamicTextSizeChanger *)createTextChanger {
+    SSDynamicTextSizeChanger *changer = [[SSDynamicTextSizeChanger alloc] init];
+    __weak typeof(self) weakSelf = self;
+
+    changer.fontChangeBlock = ^(UIFont *font) {
+        [super setFont:font];
     };
-    
-    [self ss_startObservingTextSizeChangesWithBlock:changeHandler];
+
+    changer.attributedTextChangeBlock = ^(NSAttributedString *attributedText) {
+        weakSelf.attributedText = attributedText;
+    };
+    return changer;
+}
+
+- (void)setupBaseFontBasedOnCurrentFont {
+    NSString *fontName;
+    CGFloat baseSize = 0;
+
+    if (self.font) {
+        fontName = self.font.fontName;
+        baseSize = self.font.pointSize;
+    }
+
+    fontName = (fontName ?: [self ss_defaultFontName]);
+    baseSize = (baseSize ?: [self ss_defaultBaseSize]);
+
+    self.defaultFontDescriptor = (self.font.fontDescriptor ?:
+                                  [UIFontDescriptor fontDescriptorWithName:fontName
+                                                                      size:baseSize]);
+}
+
+- (void)startObservingTextSizeChanged {
+    [self ss_startObservingTextSizeChangesWithBlock:self.textSizeChanger.changeHandler];
+}
+
+#pragma mark - SSDynamicAttributedTextSizable
+
+- (NSAttributedString *)dynamicAttributedText {
+    return self.textSizeChanger.dynamicAttributedText;
+}
+
+- (void)setDynamicAttributedText:(NSAttributedString *)attributedText {
+    self.textSizeChanger.dynamicAttributedText = attributedText;
 }
 
 @end
