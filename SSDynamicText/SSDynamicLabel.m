@@ -19,15 +19,7 @@
 
 @implementation SSDynamicLabel
 
-- (id)init {
-    if ((self = [super init])) {
-        [self setup];
-    }
-  
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         [self setup];
     }
@@ -46,20 +38,21 @@
     self.fontName = (self.fontName ?: [self ss_defaultFontName]);
     self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
     
-    self.defaultFontDescriptor = (self.font.fontDescriptor ?: [UIFontDescriptor fontDescriptorWithName:self.fontName
-                                                                                                  size:self.baseSize]);
+    self.defaultFontDescriptor = (self.font.fontDescriptor ?:
+                                  [UIFontDescriptor fontDescriptorWithName:self.fontName
+                                                                      size:self.baseSize]);
+
     [self setup];
 }
 
-+ (instancetype) labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicLabel *label = [SSDynamicLabel new];
-    label.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
++ (instancetype)labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
 
-    return label;
+    return [self labelWithFontDescriptor:fontDescriptor];
 }
 
 + (instancetype)labelWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicLabel *label = [SSDynamicLabel new];
+    SSDynamicLabel *label = [self new];
     label.defaultFontDescriptor = descriptor;
   
     return label;

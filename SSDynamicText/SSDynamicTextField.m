@@ -19,15 +19,7 @@
 
 @implementation SSDynamicTextField
 
-- (id)init {
-    if ((self = [super init])) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         [self setup];
     }
@@ -46,21 +38,21 @@
     self.fontName = (self.fontName ?: [self ss_defaultFontName]);
     self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
     
-    self.defaultFontDescriptor = (self.font.fontDescriptor ?: [UIFontDescriptor fontDescriptorWithName:self.fontName
-                                                                                                  size:self.baseSize]);
+    self.defaultFontDescriptor = (self.font.fontDescriptor ?:
+                                  [UIFontDescriptor fontDescriptorWithName:self.fontName
+                                                                      size:self.baseSize]);
+
     [self setup];
 }
 
 + (instancetype)textFieldWithFont:(NSString *)fontName baseSize:(CGFloat)size {
-    SSDynamicTextField *textField = [SSDynamicTextField new];
-    textField.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName
-                                                                          size:size];
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
     
-    return textField;
+    return [self textFieldWithFontDescriptor:fontDescriptor];
 }
 
 + (instancetype)textFieldWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextField *textField = [SSDynamicTextField new];
+    SSDynamicTextField *textField = [self new];
     textField.defaultFontDescriptor = descriptor;
     
     return textField;

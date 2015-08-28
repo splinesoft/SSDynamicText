@@ -1,13 +1,13 @@
 SSDynamicText
 =============
 
-[![Circle CI](https://circleci.com/gh/splinesoft/SSDynamicText.svg?style=svg&circle-token=cc2c1e6a7fedf6ad4cd604ee57d923ad647c78d4)](https://circleci.com/gh/splinesoft/SSDynamicText) [![Coverage Status](https://coveralls.io/repos/splinesoft/SSDynamicText/badge.svg)](https://coveralls.io/r/splinesoft/SSDynamicText)
+[![Circle CI](https://circleci.com/gh/splinesoft/SSDynamicText.svg?style=svg)](https://circleci.com/gh/splinesoft/SSDynamicText) [![codecov.io](http://codecov.io/github/splinesoft/SSDynamicText/coverage.svg?branch=master)](http://codecov.io/github/splinesoft/SSDynamicText?branch=master)
  
 iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/) is pretty neat. Also pretty neat is dynamic text that responds to the preferred text size that the user specified in Settings.app.
 
 What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue. What if you have custom fonts and want to respect the user's text size preference?
 
-SSDynamicText is a collection of simple `UILabel`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
+SSDynamicText is a collection of simple `UILabel`, `UIButton`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
 
 ## Install
 
@@ -37,6 +37,23 @@ myLabel.text = @"Auto-sizing text!";
 UIFontDescriptor *aDescriptor = [UIFontDescriptor fontDescriptorWithName:@"Courier"
                                                                     size:16.0f];
 SSDynamicLabel *otherLabel = [SSDynamicLabel labelWithFontDescriptor:aDescriptor];
+```
+
+## SSDynamicButton
+
+A button with a title label that responds when the user changes her preferred text size. Check out `Example` for a full example.
+
+```objc
+
+/**
+ * Create a dynamic auto-sizing button using a custom font and a base font size.
+ * The font size will be adjusted up (or down) based on the user's preferred size.
+ * If the user leaves the app, switches to Settings, and changes preferred size,
+ * the button will automatically update its size when the app returns to foreground.
+ */
+SSDynamicButton *myButton = [SSDynamicButton buttonWithFont:@"Courier" 
+                                                   baseSize:16.0f];
+[myButton setText:@"Auto-sizing text!" forControlState:UIControlStateNormal];                                     
 ```
 
 ## SSDynamicTextField

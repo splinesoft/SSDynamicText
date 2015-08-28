@@ -30,16 +30,14 @@
         ];
     });
   
-    NSInteger delta = (NSInteger)[fontSizes indexOfObject:self.preferredContentSizeCategory];
+    NSInteger currentSize = (NSInteger)[fontSizes indexOfObject:self.preferredContentSizeCategory];
   
-    if (delta == NSNotFound) {
+    if (currentSize == NSNotFound) {
         return 0;
     }
   
     // Default size is 'Large'
-    delta -= [fontSizes indexOfObject:UIContentSizeCategoryLarge];
-  
-    return delta;
+    return currentSize - [fontSizes indexOfObject:UIContentSizeCategoryLarge];
 }
 
 @end

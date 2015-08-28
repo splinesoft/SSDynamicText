@@ -13,7 +13,7 @@
 
 + (instancetype)dynamicFontWithName:(NSString *)fontName baseSize:(CGFloat)baseSize {
     return [UIFont fontWithName:fontName
-                           size:(baseSize + [[UIApplication sharedApplication] preferredFontSizeDelta])];
+                           size:(baseSize + [UIApplication sharedApplication].preferredFontSizeDelta)];
 }
 
 @end

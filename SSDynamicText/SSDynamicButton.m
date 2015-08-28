@@ -1,61 +1,62 @@
 //
-//  SSDynamicTextView.m
+//  SSDynamicButton.m
 //  SSDynamicText
 //
-//  Created by Jonathan Hersh on 10/6/13.
-//  Copyright (c) 2013 Splinesoft. All rights reserved.
+//  Created by Adam Grzegorowski on 18/07/15.
+//
 //
 
-#import "SSDynamicText.h"
+#import "SSDynamicButton.h"
+#import "UIView+SSTextSize.h"
 
-@interface SSDynamicTextView ()
+@interface SSDynamicButton ()
 
 @property (nonatomic, copy) NSString *fontName;
 @property (nonatomic, assign) CGFloat baseSize;
 
-- (void) setup;
+- (void)setup;
 
 @end
 
-@implementation SSDynamicTextView
+@implementation SSDynamicButton
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         [self setup];
     }
-    
+
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
 
-    if (self.font) {
-        self.fontName = self.font.fontName;
-        self.baseSize = self.font.pointSize;
+    if (self.titleLabel.font) {
+        self.fontName = self.titleLabel.font.fontName;
+        self.baseSize = self.titleLabel.font.pointSize;
     }
-    
+
     self.fontName = (self.fontName ?: [self ss_defaultFontName]);
     self.baseSize = (self.baseSize ?: [self ss_defaultBaseSize]);
-    
-    self.defaultFontDescriptor = (self.font.fontDescriptor ?:
+
+    self.defaultFontDescriptor = (self.titleLabel.font.fontDescriptor ?:
                                   [UIFontDescriptor fontDescriptorWithName:self.fontName
                                                                       size:self.baseSize]);
 
     [self setup];
 }
 
-+ (instancetype)textViewWithFont:(NSString *)fontName baseSize:(CGFloat)size {
++ (instancetype)buttonWithFont:(NSString *)fontName baseSize:(CGFloat)size {
     UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:size];
-    
-    return [self textViewWithFontDescriptor:fontDescriptor];
+
+    return [self buttonWithFontDescriptor:fontDescriptor];
 }
 
-+ (instancetype)textViewWithFontDescriptor:(UIFontDescriptor *)descriptor {
-    SSDynamicTextView *textView = [self new];
-    textView.defaultFontDescriptor = descriptor;
-    
-    return textView;
++ (instancetype)buttonWithFontDescriptor:(UIFontDescriptor *)descriptor {
+    SSDynamicButton *button = [self new];
+    button.defaultFontDescriptor = descriptor;
+
+    return button;
 }
 
 - (void)dealloc {
@@ -63,16 +64,16 @@
 }
 
 - (void)setup {
-    __weak typeof (self) weakSelf = self;
-    
+    __weak typeof(self) weakSelf = self;
+
     SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {
         CGFloat preferredSize = [weakSelf.defaultFontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute] floatValue];
         preferredSize += newDelta;
-        
-        weakSelf.font = [UIFont fontWithDescriptor:weakSelf.defaultFontDescriptor
-                                              size:preferredSize];
+
+        weakSelf.titleLabel.font = [UIFont fontWithDescriptor:weakSelf.defaultFontDescriptor
+                                                         size:preferredSize];
     };
-    
+
     [self ss_startObservingTextSizeChangesWithBlock:changeHandler];
 }
 
