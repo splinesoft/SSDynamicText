@@ -18,6 +18,14 @@
 		5EE286F0180239B900D286ED /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE286EF180239B900D286ED /* SSViewController.m */; };
 		5EE286F2180239B900D286ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE286F1180239B900D286ED /* Images.xcassets */; };
 		9CE3D14E59CCC217CA87082B /* libPods-SSDynamicTextTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3867F404C9867F021E57D92D /* libPods-SSDynamicTextTests.a */; };
+		B70414E61BAAF5750055958F /* SSTestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B70414E51BAAF5750055958F /* SSTestsHelper.m */; };
+		B74328F01B9455DC0098E793 /* SSDynamicLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328EF1B9455DC0098E793 /* SSDynamicLabelTests.m */; };
+		B74328F21B9461CB0098E793 /* SSDynamicsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74328F11B9461CB0098E793 /* SSDynamicsView.xib */; };
+		B74328F51B9461E60098E793 /* SSDynamicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F41B9461E60098E793 /* SSDynamicsView.m */; };
+		B74328F71B946E2A0098E793 /* SSDynamicTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */; };
+		B74328F91B946EEB0098E793 /* SSTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F81B946EEB0098E793 /* SSTextViewTests.m */; };
+		B74328FB1B946FE90098E793 /* SSDynamicButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328FA1B946FE90098E793 /* SSDynamicButtonTests.m */; };
+		B74328FE1B9476010098E793 /* SSAttributedStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,17 @@
 		7822CB52AD889E7A1D57DED4 /* Pods-SSDynamicTextExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample.release.xcconfig"; sourceTree = "<group>"; };
 		8CD54212E04269E8F94B08C4 /* Pods-SSDynamicTextExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample.debug.xcconfig"; sourceTree = "<group>"; };
 		A40B656FCA8C692363D81440 /* libPods-SSDynamicTextExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B70414E41BAAF5750055958F /* SSTestsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSTestsHelper.h; sourceTree = "<group>"; };
+		B70414E51BAAF5750055958F /* SSTestsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTestsHelper.m; sourceTree = "<group>"; };
+		B74328EF1B9455DC0098E793 /* SSDynamicLabelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicLabelTests.m; sourceTree = "<group>"; };
+		B74328F11B9461CB0098E793 /* SSDynamicsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDynamicsView.xib; sourceTree = "<group>"; };
+		B74328F31B9461E60098E793 /* SSDynamicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicsView.h; sourceTree = "<group>"; };
+		B74328F41B9461E60098E793 /* SSDynamicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicsView.m; sourceTree = "<group>"; };
+		B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextFieldTests.m; sourceTree = "<group>"; };
+		B74328F81B946EEB0098E793 /* SSTextViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTextViewTests.m; sourceTree = "<group>"; };
+		B74328FA1B946FE90098E793 /* SSDynamicButtonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicButtonTests.m; sourceTree = "<group>"; };
+		B74328FC1B9476010098E793 /* SSAttributedStringValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAttributedStringValidator.h; sourceTree = "<group>"; };
+		B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAttributedStringValidator.m; sourceTree = "<group>"; };
 		F0E051720771E3313A9C06AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +103,15 @@
 		5E90DAC919F9655600257F8E /* SSDynamicTextTests */ = {
 			isa = PBXGroup;
 			children = (
+				B70414E41BAAF5750055958F /* SSTestsHelper.h */,
+				B70414E51BAAF5750055958F /* SSTestsHelper.m */,
 				5E90DACC19F9655600257F8E /* SSDynamicTextTests.m */,
+				B74328EF1B9455DC0098E793 /* SSDynamicLabelTests.m */,
+				B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */,
+				B74328F81B946EEB0098E793 /* SSTextViewTests.m */,
+				B74328FA1B946FE90098E793 /* SSDynamicButtonTests.m */,
+				B74328FC1B9476010098E793 /* SSAttributedStringValidator.h */,
+				B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */,
 				5E90DACA19F9655600257F8E /* Supporting Files */,
 			);
 			path = SSDynamicTextTests;
@@ -140,6 +167,9 @@
 				5EE286EF180239B900D286ED /* SSViewController.m */,
 				5EE286F1180239B900D286ED /* Images.xcassets */,
 				5EE286DD180239B800D286ED /* Supporting Files */,
+				B74328F31B9461E60098E793 /* SSDynamicsView.h */,
+				B74328F41B9461E60098E793 /* SSDynamicsView.m */,
+				B74328F11B9461CB0098E793 /* SSDynamicsView.xib */,
 			);
 			path = SSDynamicTextExample;
 			sourceTree = "<group>";
@@ -258,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EE286F2180239B900D286ED /* Images.xcassets in Resources */,
+				B74328F21B9461CB0098E793 /* SSDynamicsView.xib in Resources */,
 				5EE286E1180239B800D286ED /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74328F01B9455DC0098E793 /* SSDynamicLabelTests.m in Sources */,
+				B74328F91B946EEB0098E793 /* SSTextViewTests.m in Sources */,
+				B74328F71B946E2A0098E793 /* SSDynamicTextFieldTests.m in Sources */,
+				B74328FE1B9476010098E793 /* SSAttributedStringValidator.m in Sources */,
 				5E90DACD19F9655600257F8E /* SSDynamicTextTests.m in Sources */,
+				B70414E61BAAF5750055958F /* SSTestsHelper.m in Sources */,
+				B74328FB1B946FE90098E793 /* SSDynamicButtonTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74328F51B9461E60098E793 /* SSDynamicsView.m in Sources */,
 				5EE286F0180239B900D286ED /* SSViewController.m in Sources */,
 				5EE286E7180239B800D286ED /* SSAppDelegate.m in Sources */,
 				5EE286E3180239B800D286ED /* main.m in Sources */,
@@ -388,6 +426,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSDynamicTextExample.app/SSDynamicTextExample";
 			};
@@ -496,7 +535,7 @@
 				GCC_PREFIX_HEADER = "SSDynamicTextExample/SSDynamicTextExample-Prefix.pch";
 				INFOPLIST_FILE = "SSDynamicTextExample/SSDynamicTextExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -8,25 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import <Expecta.h>
 #import <SSDynamicText.h>
-
-NSString * const kTestFontName = @"Avenir";
-CGFloat    const kTestFontSize = 14.f;
+#import "SSTestsHelper.h"
 
 @interface SSDynamicTextTests : XCTestCase
 
 @end
 
-@implementation SSDynamicTextTests
-{
+@implementation SSDynamicTextTests {
     SSDynamicLabel *label;
 }
 
 - (void)setUp {
     [super setUp];
     
-    label = [SSDynamicLabel labelWithFont:kTestFontName baseSize:kTestFontSize];
+    label = [SSDynamicLabel labelWithFont:SSTestFontName baseSize:SSTestFontSize];
 }
 
 - (void)tearDown {
@@ -34,20 +30,21 @@ CGFloat    const kTestFontSize = 14.f;
 }
 
 - (void)testInitializable {
-    XCTAssertNotNil([SSDynamicLabel labelWithFont:kTestFontName baseSize:kTestFontSize], @"Label should initialize");
-    XCTAssertNotNil([SSDynamicTextField textFieldWithFont:kTestFontName baseSize:kTestFontSize], @"Text field should initialize");
-    XCTAssertNotNil([SSDynamicTextView textViewWithFont:kTestFontName baseSize:kTestFontSize], @"Text view should initialize");
-    XCTAssertNotNil([SSDynamicButton buttonWithFont:kTestFontName baseSize:kTestFontSize], @"Button should initialize");
+    //Assert
+    XCTAssertNotNil([SSDynamicLabel labelWithFont:SSTestFontName baseSize:SSTestFontSize], @"Label should initialize");
+    XCTAssertNotNil([SSDynamicTextField textFieldWithFont:SSTestFontName baseSize:SSTestFontSize], @"Text field should initialize");
+    XCTAssertNotNil([SSDynamicTextView textViewWithFont:SSTestFontName baseSize:SSTestFontSize], @"Text view should initialize");
+    XCTAssertNotNil([SSDynamicButton buttonWithFont:SSTestFontName baseSize:SSTestFontSize], @"Button should initialize");
 }
 
-- (void)testApplicationFontSizeDelta
-{
-    // This will probably fail if you've set a custom preferred font size in the simulator
+- (void)testApplicationFontSizeDelta {
+    //Assert
+    // This will probably fail if you've set a custom preferred font size in the simulator, please change it to UIContentSizeCategoryExtraLarge
     XCTAssertEqual(0, [[UIApplication sharedApplication] preferredFontSizeDelta], @"Font size delta should be zero");
 }
 
-- (void)testInfoBundleDefaultFontSize
-{
+- (void)testInfoBundleDefaultFontSize {
+    //Assert
     XCTAssertEqualWithAccuracy(16, [label ss_defaultBaseSize], FLT_EPSILON, @"Default base size should be 16");
 }
 
