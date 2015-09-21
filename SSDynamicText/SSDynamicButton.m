@@ -49,6 +49,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 
+    NSAssert(self.buttonType == UIButtonTypeCustom, @"Change SSDynamicButton.buttonType to UIButtonTypeCustom in your nib");
     NSString *fontName;
     CGFloat baseSize = 0;
 
