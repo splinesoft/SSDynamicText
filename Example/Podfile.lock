@@ -1,17 +1,17 @@
 PODS:
-  - Expecta (1.0.0)
+  - OCMock (3.1.5)
   - SSDynamicText (0.4.0)
 
 DEPENDENCIES:
-  - Expecta
+  - OCMock (~> 3)
   - SSDynamicText (from `../SSDynamicText.podspec`)
 
 EXTERNAL SOURCES:
   SSDynamicText:
-    :path: "../SSDynamicText.podspec"
+    :path: ../SSDynamicText.podspec
 
 SPEC CHECKSUMS:
-  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  OCMock: 4c2925291f80407c3738dd1db14d21d0cc278864
   SSDynamicText: 5981a0d801c081bc3966241792d9c08d2c2b2cfe
 
-COCOAPODS: 0.38.0
+COCOAPODS: 0.38.2

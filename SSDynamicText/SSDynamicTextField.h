@@ -7,8 +7,9 @@
 //
 
 @import UIKit;
+#import "SSDynamicAttributedTextSizable.h"
 
-@interface SSDynamicTextField : UITextField
+@interface SSDynamicTextField : UITextField <SSDynamicAttributedTextSizable>
 
 /**
  * Create a dynamic-sizing label that will adjust its size in response to changes

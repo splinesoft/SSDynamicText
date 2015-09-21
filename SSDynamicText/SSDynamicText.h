@@ -11,6 +11,7 @@
 #import "UIApplication+SSTextSize.h"
 #import "UIFont+SSTextSize.h"
 #import "UIView+SSTextSize.h"
+#import "NSAttributedString+SSTextSize.h"
 
 #import "SSDynamicLabel.h"
 #import "SSDynamicTextField.h"

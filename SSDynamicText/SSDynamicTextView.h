@@ -7,8 +7,9 @@
 //
 
 @import UIKit;
+#import "SSDynamicAttributedTextSizable.h"
 
-@interface SSDynamicTextView : UITextView
+@interface SSDynamicTextView : UITextView <SSDynamicAttributedTextSizable>
 
 /**
  * Create a dynamic-sizing textview that will adjust its size in response to changes
