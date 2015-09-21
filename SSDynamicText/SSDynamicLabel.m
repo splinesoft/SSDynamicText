@@ -7,7 +7,7 @@
 //
 
 #import "SSDynamicText.h"
-#import "SSDynamicTextSizeChanger.m"
+#import "SSDynamicTextSizeChanger.h"
 
 @interface SSDynamicLabel ()
 
