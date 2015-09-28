@@ -113,7 +113,7 @@ UIFont *myFont = [UIFont dynamicFontWithName:@"Courier" baseSize:16.0f];
 NSInteger textDelta = [[UIApplication sharedApplication] preferredFontSizeDelta];
 ```
 
-## AttributedText Support
+## `NSAttributedString` Support
 
 SSDynamicText supports attributed text, all you have to do is set your attributed text to new property dynamicAttributedText.
 

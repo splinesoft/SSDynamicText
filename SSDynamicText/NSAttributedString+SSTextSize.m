@@ -1,6 +1,6 @@
 //
 //  NSAttributedString+SSTextSize.m
-//  Pods
+//  SSDynamicText
 //
 //  Created by Remigiusz Herba on 28/08/15.
 //
