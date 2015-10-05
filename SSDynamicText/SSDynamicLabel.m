@@ -37,7 +37,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-        [self startObservingTextSizeChanged];
+        [self startObservingTextSizeChanges];
     }
     
     return self;
@@ -47,7 +47,7 @@
     [super awakeFromNib];
 
     [self setupBaseFontBasedOnCurrentFont];
-    [self startObservingTextSizeChanged];
+    [self startObservingTextSizeChanges];
 }
 
 + (instancetype)labelWithFont:(NSString *)fontName baseSize:(CGFloat)size {
@@ -100,7 +100,7 @@
                                                                       size:baseSize]);
 }
 
-- (void)startObservingTextSizeChanged {
+- (void)startObservingTextSizeChanges {
     [self ss_startObservingTextSizeChangesWithBlock:self.textSizeChanger.changeHandler];
 }
 

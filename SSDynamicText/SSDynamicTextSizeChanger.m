@@ -1,6 +1,6 @@
 //
 //  SSDynamicTextSizeChanger.m
-//  Pods
+//  SSDynamicText
 //
 //  Created by Remigiusz Herba on 15/09/15.
 //
