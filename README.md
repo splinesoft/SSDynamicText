@@ -7,7 +7,7 @@ iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentati
 
 What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue. What if you have custom fonts and want to respect the user's text size preference?
 
-SSDynamicText is a collection of simple `UILabel`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
+SSDynamicText is a collection of simple `UILabel`, `UIButton`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
 
 ## Install
 
@@ -51,8 +51,8 @@ A button with a title label that responds when the user changes her preferred te
  * If the user leaves the app, switches to Settings, and changes preferred size,
  * the button will automatically update its size when the app returns to foreground.
  */
-SSDynamicButton *myButton = [SSDynamicButton labelWithFont:@"Courier" 
-                                                  baseSize:16.0f];
+SSDynamicButton *myButton = [SSDynamicButton buttonWithFont:@"Courier" 
+                                                   baseSize:16.0f];
 [myButton setText:@"Auto-sizing text!" forControlState:UIControlStateNormal];                                     
 ```
 
@@ -113,6 +113,19 @@ UIFont *myFont = [UIFont dynamicFontWithName:@"Courier" baseSize:16.0f];
 NSInteger textDelta = [[UIApplication sharedApplication] preferredFontSizeDelta];
 ```
 
+## `NSAttributedString` Support
+
+SSDynamicText supports attributed text, all you have to do is set your attributed text to new property dynamicAttributedText.
+
+```objc
+/*
+TextView and TextField sometimes calls setAttributedText even when we work with normal Text. 
+Framework is using it under the hood sometimes after layouts or even setText calls it. Because of that we cannot override
+default attributeText setter to change font, sometimes it change font at random.
+*/
+
+@property (nonatomic, copy) NSAttributedString *dynamicAttributedText;
+```
 
 ## Thanks!
 

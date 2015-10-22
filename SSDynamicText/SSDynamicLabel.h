@@ -7,13 +7,14 @@
 //
 
 @import UIKit;
+#import "SSDynamicAttributedTextSizable.h"
 
 /**
  * In iOS 7, the user can set his or her preferred text size in Settings.app.
  * This label adjusts its font size by an offset determined by the user's preferred text size.
  */
 
-@interface SSDynamicLabel : UILabel
+@interface SSDynamicLabel : UILabel <SSDynamicAttributedTextSizable>
 
 /**
  * Create a dynamic-sizing label that will adjust its size in response to changes
