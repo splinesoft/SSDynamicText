@@ -5,7 +5,7 @@ SSDynamicText
  
 iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/) is pretty neat. Also pretty neat is dynamic text that responds to the preferred text size that the user specified in Settings.app.
 
-What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue. What if you have custom fonts and want to respect the user's text size preference?
+What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue or San Francisco. What if you have custom fonts and want to respect the user's text size preference?
 
 SSDynamicText is a collection of simple `UILabel`, `UIButton`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
 
@@ -118,11 +118,11 @@ NSInteger textDelta = [[UIApplication sharedApplication] preferredFontSizeDelta]
 SSDynamicText supports attributed text, all you have to do is set your attributed text to new property dynamicAttributedText.
 
 ```objc
-/*
-TextView and TextField sometimes calls setAttributedText even when we work with normal Text. 
-Framework is using it under the hood sometimes after layouts or even setText calls it. Because of that we cannot override
-default attributeText setter to change font, sometimes it change font at random.
-*/
+/**
+ * TextView and TextField sometimes calls setAttributedText even when we work with normal Text. 
+ * Framework is using it under the hood sometimes after layouts or even setText calls it. Because of that we cannot override
+ * default attributeText setter to change font, sometimes it change font at random.
+ */
 
 @property (nonatomic, copy) NSAttributedString *dynamicAttributedText;
 ```
