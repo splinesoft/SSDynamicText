@@ -6,14 +6,14 @@ machine:
     version: "7.0"
 dependencies:
   pre:
-    - xcrun instruments -w "iPhone 6 (9.1 Simulator)" || exit 0
+    - xcrun instruments -w "iPhone 6s (9.0)" || exit 0
   override:    
     - sudo gem install cocoapods xcpretty obcd -N
     - pod install --project-directory=Example
 test:
   override:
     - set -o pipefail && xcodebuild -workspace Example/SSDynamicTextExample.xcworkspace
-      -scheme SSDynamicTextExample -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6" 
+      -scheme SSDynamicTextExample -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6s"
       GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test ONLY_ACTIVE_ARCH=NO | xcpretty -c 
       --report junit --output ${CIRCLE_TEST_REPORTS}/junit.xml
     - pod lib lint --quick
