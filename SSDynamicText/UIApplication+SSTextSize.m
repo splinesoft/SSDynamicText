@@ -30,7 +30,7 @@
         ];
     });
   
-    NSInteger currentSize = (NSInteger)[fontSizes indexOfObject:self.preferredContentSizeCategory];
+    NSUInteger currentSize = [fontSizes indexOfObject:self.preferredContentSizeCategory];
   
     if (currentSize == NSNotFound) {
         return 0;

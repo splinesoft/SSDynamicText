@@ -29,11 +29,11 @@
 
     SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
     self.dynamicTextFieldFromXib = view.textField;
-    [SSTestsHelper mockExtraExtraLargeCategory];
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
 }
 
 - (void)tearDown {
-    [SSTestsHelper stopMocking];
+    [SSTestsHelper stopMockingPreferredContentSizeCategory];
     [super tearDown];
 }
 

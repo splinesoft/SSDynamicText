@@ -17,13 +17,17 @@
 		5EE286E7180239B800D286ED /* SSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE286E6180239B800D286ED /* SSAppDelegate.m */; };
 		5EE286F0180239B900D286ED /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE286EF180239B900D286ED /* SSViewController.m */; };
 		5EE286F2180239B900D286ED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE286F1180239B900D286ED /* Images.xcassets */; };
+		6611CBF51C0E52CC003E68A3 /* UIView+SSTextSizeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6611CBF41C0E52CC003E68A3 /* UIView+SSTextSizeTests.m */; };
+		661812031C0CED6C00F558EC /* UIFont+SSTextSizeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 661812021C0CED6C00F558EC /* UIFont+SSTextSizeTests.m */; };
+		667FF3881C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667FF3871C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m */; };
+		6696C9C21C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6696C9C11C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9CE3D14E59CCC217CA87082B /* libPods-SSDynamicTextTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3867F404C9867F021E57D92D /* libPods-SSDynamicTextTests.a */; };
 		B70414E61BAAF5750055958F /* SSTestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B70414E51BAAF5750055958F /* SSTestsHelper.m */; };
 		B74328F01B9455DC0098E793 /* SSDynamicLabelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328EF1B9455DC0098E793 /* SSDynamicLabelTests.m */; };
 		B74328F21B9461CB0098E793 /* SSDynamicsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74328F11B9461CB0098E793 /* SSDynamicsView.xib */; };
 		B74328F51B9461E60098E793 /* SSDynamicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F41B9461E60098E793 /* SSDynamicsView.m */; };
 		B74328F71B946E2A0098E793 /* SSDynamicTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */; };
-		B74328F91B946EEB0098E793 /* SSTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F81B946EEB0098E793 /* SSTextViewTests.m */; };
+		B74328F91B946EEB0098E793 /* SSDynamicTextViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F81B946EEB0098E793 /* SSDynamicTextViewTests.m */; };
 		B74328FB1B946FE90098E793 /* SSDynamicButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328FA1B946FE90098E793 /* SSDynamicButtonTests.m */; };
 		B74328FE1B9476010098E793 /* SSAttributedStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */; };
 /* End PBXBuildFile section */
@@ -60,6 +64,10 @@
 		5EE286EF180239B900D286ED /* SSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSViewController.m; sourceTree = "<group>"; };
 		5EE286F1180239B900D286ED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5EE286F8180239B900D286ED /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		6611CBF41C0E52CC003E68A3 /* UIView+SSTextSizeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSTextSizeTests.m"; sourceTree = "<group>"; };
+		661812021C0CED6C00F558EC /* UIFont+SSTextSizeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SSTextSizeTests.m"; sourceTree = "<group>"; };
+		667FF3871C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SSTextSizeTests.m"; sourceTree = "<group>"; };
+		6696C9C11C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicViewsReleaseTests.m; sourceTree = "<group>"; };
 		7822CB52AD889E7A1D57DED4 /* Pods-SSDynamicTextExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample.release.xcconfig"; sourceTree = "<group>"; };
 		8CD54212E04269E8F94B08C4 /* Pods-SSDynamicTextExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextExample/Pods-SSDynamicTextExample.debug.xcconfig"; sourceTree = "<group>"; };
 		A40B656FCA8C692363D81440 /* libPods-SSDynamicTextExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +78,7 @@
 		B74328F31B9461E60098E793 /* SSDynamicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicsView.h; sourceTree = "<group>"; };
 		B74328F41B9461E60098E793 /* SSDynamicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicsView.m; sourceTree = "<group>"; };
 		B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextFieldTests.m; sourceTree = "<group>"; };
-		B74328F81B946EEB0098E793 /* SSTextViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSTextViewTests.m; sourceTree = "<group>"; };
+		B74328F81B946EEB0098E793 /* SSDynamicTextViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextViewTests.m; sourceTree = "<group>"; };
 		B74328FA1B946FE90098E793 /* SSDynamicButtonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicButtonTests.m; sourceTree = "<group>"; };
 		B74328FC1B9476010098E793 /* SSAttributedStringValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAttributedStringValidator.h; sourceTree = "<group>"; };
 		B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAttributedStringValidator.m; sourceTree = "<group>"; };
@@ -108,8 +116,12 @@
 				5E90DACC19F9655600257F8E /* SSDynamicTextTests.m */,
 				B74328EF1B9455DC0098E793 /* SSDynamicLabelTests.m */,
 				B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */,
-				B74328F81B946EEB0098E793 /* SSTextViewTests.m */,
+				B74328F81B946EEB0098E793 /* SSDynamicTextViewTests.m */,
 				B74328FA1B946FE90098E793 /* SSDynamicButtonTests.m */,
+				661812021C0CED6C00F558EC /* UIFont+SSTextSizeTests.m */,
+				6696C9C11C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m */,
+				667FF3871C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m */,
+				6611CBF41C0E52CC003E68A3 /* UIView+SSTextSizeTests.m */,
 				B74328FC1B9476010098E793 /* SSAttributedStringValidator.h */,
 				B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */,
 				5E90DACA19F9655600257F8E /* Supporting Files */,
@@ -364,10 +376,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74328F01B9455DC0098E793 /* SSDynamicLabelTests.m in Sources */,
-				B74328F91B946EEB0098E793 /* SSTextViewTests.m in Sources */,
+				B74328F91B946EEB0098E793 /* SSDynamicTextViewTests.m in Sources */,
 				B74328F71B946E2A0098E793 /* SSDynamicTextFieldTests.m in Sources */,
 				B74328FE1B9476010098E793 /* SSAttributedStringValidator.m in Sources */,
+				6696C9C21C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m in Sources */,
+				661812031C0CED6C00F558EC /* UIFont+SSTextSizeTests.m in Sources */,
 				5E90DACD19F9655600257F8E /* SSDynamicTextTests.m in Sources */,
+				6611CBF51C0E52CC003E68A3 /* UIView+SSTextSizeTests.m in Sources */,
+				667FF3881C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m in Sources */,
 				B70414E61BAAF5750055958F /* SSTestsHelper.m in Sources */,
 				B74328FB1B946FE90098E793 /* SSDynamicButtonTests.m in Sources */,
 			);

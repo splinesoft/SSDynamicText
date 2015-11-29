@@ -14,8 +14,11 @@ extern CGFloat const SSTestFontSizeDifferenceForSizeExtraExtraLarge;
 
 @interface SSTestsHelper : NSObject
 
-+ (void)mockExtraExtraLargeCategory;
-+ (void)stopMocking;
++ (void)startMockingPreferredContentSizeCategory:(NSString *)contentSizeCategory;
++ (void)stopMockingPreferredContentSizeCategory;
 + (void)postContentSizeChangeNotification;
+
++ (void)startMockingBundleDictionary:(NSDictionary *)dictionary;
++ (void)stopMockingBundleDictionary;
 
 @end
