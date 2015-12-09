@@ -13,14 +13,14 @@
 #import "SSAttributedStringValidator.h"
 #import "SSTestsHelper.h"
 
-@interface SSTextViewTests : XCTestCase
+@interface SSDynamicTextViewTests : XCTestCase
 
 @property (nonatomic, strong) SSDynamicTextView *dynamicTextView;
 @property (nonatomic, strong) SSDynamicTextView *dynamicTextViewFromXib;
 
 @end
 
-@implementation SSTextViewTests
+@implementation SSDynamicTextViewTests
 
 - (void)setUp {
     [super setUp];
@@ -28,11 +28,11 @@
 
     SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
     self.dynamicTextViewFromXib = view.textView;
-    [SSTestsHelper mockExtraExtraLargeCategory];
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
 }
 
 - (void)tearDown {
-    [SSTestsHelper stopMocking];
+    [SSTestsHelper stopMockingPreferredContentSizeCategory];
     [super tearDown];
 }
 
