@@ -3,32 +3,26 @@
 //  SSDynamicTextExample
 //
 //  Created by Remigiusz Herba on 31/08/15.
-//  
+//  Copyright (c) 2015 Splinesoft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import <SSDynamicTextView.h>
-#import "SSDynamicsView.h"
-#import "SSAttributedStringValidator.h"
 #import "SSTestsHelper.h"
+#import "SSAttributedStringValidator.h"
+
+#import "SSDynamicTextView.h"
+#import "SSDynamicsView.h"
 
 @interface SSDynamicTextViewTests : XCTestCase
-
-@property (nonatomic, strong) SSDynamicTextView *dynamicTextView;
-@property (nonatomic, strong) SSDynamicTextView *dynamicTextViewFromXib;
-
 @end
 
 @implementation SSDynamicTextViewTests
 
 - (void)setUp {
     [super setUp];
-    self.dynamicTextView = [SSDynamicTextView textViewWithFont:SSTestFontName baseSize:SSTestFontSize];
 
-    SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
-    self.dynamicTextViewFromXib = view.textView;
-    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+    //Default content size category
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryLarge];
 }
 
 - (void)tearDown {
@@ -36,57 +30,96 @@
     [super tearDown];
 }
 
-- (void)testDefaultSettings {
-    //Assert
-    XCTAssertEqualObjects(self.dynamicTextView.font.fontName, SSTestFontName);
-    XCTAssertEqualObjects(self.dynamicTextViewFromXib.font.fontName, SSTestFontName);
-    XCTAssertEqual(self.dynamicTextView.font.pointSize, SSTestFontSize);
-    XCTAssertEqual(self.dynamicTextViewFromXib.font.pointSize, SSTestFontSize);
+- (NSArray *)dynamicTextViewsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+    SSDynamicTextView *dynamicTextViewWithFont = [SSDynamicTextView textViewWithFont:fontName baseSize:fontSize];
+
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+    SSDynamicTextView *dynamicTextViewWithFontDescriptor = [SSDynamicTextView textViewWithFontDescriptor:fontDescriptor];
+
+    SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
+    SSDynamicTextView *dynamicTextViewFromXib = view.textView;
+
+    return @[ dynamicTextViewWithFont, dynamicTextViewWithFontDescriptor, dynamicTextViewFromXib ];
 }
 
-- (void)testContentSizeChange {
+- (void)testTextViewFontNameShouldBeEqualToFontNameFromConstructor {
+    //Arrange
+    NSString *expectedFontName = SSTestFontName;
+
     //Act
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray<SSDynamicTextView *> *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertEqual(self.dynamicTextView.font.pointSize, SSTestFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
-    XCTAssertEqual(self.dynamicTextViewFromXib.font.pointSize, SSTestFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
+    for (SSDynamicTextView *textView in dynamicTextViews) {
+        //Assert
+        XCTAssertEqualObjects(textView.font.fontName, expectedFontName);
+    }
 }
 
-- (void)testFontChangeAndThenContentSizeChange {
+- (void)testTextViewFontSizeShouldBeEqualToFontSizeInConstructorForDefaultPreferredContentSizeCategory {
+    //Arrange
+    CGFloat expectedFontSize = SSTestFontSize;
+
+    //Act
+    NSArray<SSDynamicTextView *> *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+
+    for (SSDynamicTextView *textView in dynamicTextViews) {
+        //Assert
+        XCTAssertEqualWithAccuracy(textView.font.pointSize, expectedFontSize, FLT_EPSILON);
+    }
+}
+
+- (void)testTextViewFontSizeShouldBeEqualToLabelFontSizeIncreasedByPreferredContentSizeCategoryDelta {
+    // Arrange
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+
+    CGFloat initialFontSize = SSTestFontSize;
+
+    //Act
+    NSArray<SSDynamicTextView *> *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:initialFontSize];
+
+    for (SSDynamicTextView *textView in dynamicTextViews) {
+
+        //Assert
+        XCTAssertEqualWithAccuracy(textView.font.pointSize, initialFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
+    }
+}
+
+- (void)testTextViewFontSizeShouldBeEqualToNewFontSizeIncreasedByContentSizeCategoryDelta {
     //Arrange
     CGFloat newFontSize = 7.0f;
     UIFont *newFont = [UIFont systemFontOfSize:newFontSize];
 
-    //Act
-    self.dynamicTextView.font = newFont;
-    self.dynamicTextViewFromXib.font = newFont;
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertEqualObjects(self.dynamicTextView.font.fontName, newFont.fontName);
-    XCTAssertEqualObjects(self.dynamicTextViewFromXib.font.fontName, newFont.fontName);
-    XCTAssertEqual(self.dynamicTextView.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
-    XCTAssertEqual(self.dynamicTextViewFromXib.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+
+    for (SSDynamicTextView *textView in dynamicTextViews) {
+        //Act
+        textView.font = newFont;
+
+        //Assert
+        XCTAssertEqualWithAccuracy(textView.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
+    }
 }
 
-- (void)testAttributedStringContentSizeChange {
+- (void)testTextViewAttributedStringFontSizesShouldBeIncreasedByContentSizeCategoryDelta {
     //Arrange
     NSAttributedString *attributedString = [SSAttributedStringValidator testAttributedString];
-    self.dynamicTextView.dynamicAttributedText = attributedString;
-    self.dynamicTextViewFromXib.dynamicAttributedText = attributedString;
 
-    //Act
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray<SSDynamicTextView *> *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:self.dynamicTextView.attributedText
-                                                            changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
-    XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:self.dynamicTextViewFromXib.attributedText
-                                                            changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
 
-    XCTAssertEqualObjects(attributedString, self.dynamicTextView.dynamicAttributedText);
-    XCTAssertEqualObjects(attributedString, self.dynamicTextViewFromXib.dynamicAttributedText);
+    for (SSDynamicTextView *textView in dynamicTextViews) {
+        //Act
+        textView.dynamicAttributedText = attributedString;
+
+        //Assert
+        XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:textView.attributedText
+                                                                changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+
+        XCTAssertEqualObjects(textView.dynamicAttributedText, attributedString);
+    }
 }
 
 @end

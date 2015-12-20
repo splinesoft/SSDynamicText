@@ -3,32 +3,26 @@
 //  SSDynamicTextExample
 //
 //  Created by Remigiusz Herba on 31/08/15.
-//  
+//  Copyright (c) 2015 Splinesoft. All rights reserved.  
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import <SSDynamicLabel.h>
-#import "SSDynamicsView.h"
-#import "SSAttributedStringValidator.h"
 #import "SSTestsHelper.h"
+#import "SSAttributedStringValidator.h"
+
+#import "SSDynamicLabel.h"
+#import "SSDynamicsView.h"
 
 @interface SSDynamicLabelTests : XCTestCase
-
-@property (nonatomic, strong) SSDynamicLabel *dynamicLabel;
-@property (nonatomic, strong) SSDynamicLabel *dynamicLabelFromXib;
-
 @end
 
 @implementation SSDynamicLabelTests
 
 - (void)setUp {
     [super setUp];
-    self.dynamicLabel = [SSDynamicLabel labelWithFont:SSTestFontName baseSize:SSTestFontSize];
 
-    SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
-    self.dynamicLabelFromXib = view.label;
-    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+    //Default content size category
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryLarge];
 }
 
 - (void)tearDown {
@@ -36,58 +30,96 @@
     [super tearDown];
 }
 
+- (NSArray *)dynamicLabelsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+    SSDynamicLabel *dynamicLabelWithFont = [SSDynamicLabel labelWithFont:fontName baseSize:fontSize];
 
-- (void)testDefaultSettings {
-    //Assert
-    XCTAssertEqualObjects(self.dynamicLabel.font.fontName, SSTestFontName);
-    XCTAssertEqualObjects(self.dynamicLabelFromXib.font.fontName, SSTestFontName);
-    XCTAssertEqual(self.dynamicLabel.font.pointSize, SSTestFontSize);
-    XCTAssertEqual(self.dynamicLabelFromXib.font.pointSize, SSTestFontSize);
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+    SSDynamicLabel *dynamicLabelWithFontDescriptor = [SSDynamicLabel labelWithFontDescriptor:fontDescriptor];
+
+    SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
+    SSDynamicLabel *dynamicLabelFromXib = view.label;
+
+    return @[ dynamicLabelWithFont, dynamicLabelWithFontDescriptor, dynamicLabelFromXib ];
 }
 
-- (void)testContentSizeChange {
+- (void)testLabelFontNameShouldBeEqualToFontNameFromConstructor {
+    //Arrange
+    NSString *expectedFontName = SSTestFontName;
+
     //Act
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertEqual(self.dynamicLabel.font.pointSize, SSTestFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
-    XCTAssertEqual(self.dynamicLabelFromXib.font.pointSize, SSTestFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
+    for (SSDynamicLabel *label in dynamicLabels) {
+        //Assert
+        XCTAssertEqualObjects(label.font.fontName, expectedFontName);
+    }
 }
 
-- (void)testFontChangeAndThenContentSizeChange {
+- (void)testLabelFontSizeShouldBeEqualToFontSizeInConstructorForDefaultPreferredContentSizeCategory {
+    //Arrange
+    CGFloat expectedFontSize = SSTestFontSize;
+
+    //Act
+    NSArray<SSDynamicLabel *> *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+
+    for (SSDynamicLabel *label in dynamicLabels) {
+        //Assert
+        XCTAssertEqualWithAccuracy(label.font.pointSize, expectedFontSize, FLT_EPSILON);
+    }
+}
+
+- (void)testLabelFontSizeShouldBeEqualToLabelFontSizeIncreasedByPreferredContentSizeCategoryDelta {
+    // Arrange
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+
+    CGFloat initialFontSize = SSTestFontSize;
+
+    //Act
+    NSArray<SSDynamicLabel *> *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:initialFontSize];
+
+    for (SSDynamicLabel *label in dynamicLabels) {
+
+        //Assert
+        XCTAssertEqualWithAccuracy(label.font.pointSize, initialFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
+    }
+}
+
+- (void)testLabelFontSizeShouldBeEqualToNewFontSizeIncreasedByContentSizeCategoryDelta {
     //Arrange
     CGFloat newFontSize = 7.0f;
     UIFont *newFont = [UIFont systemFontOfSize:newFontSize];
 
-    //Act
-    self.dynamicLabel.font = newFont;
-    self.dynamicLabelFromXib.font = newFont;
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray<SSDynamicLabel *> *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertEqualObjects(self.dynamicLabel.font.fontName, newFont.fontName);
-    XCTAssertEqualObjects(self.dynamicLabelFromXib.font.fontName, newFont.fontName);
-    XCTAssertEqual(self.dynamicLabel.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
-    XCTAssertEqual(self.dynamicLabelFromXib.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+
+    for (SSDynamicLabel *label in dynamicLabels) {
+        //Act
+        label.font = newFont;
+
+        //Assert
+        XCTAssertEqualWithAccuracy(label.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
+    }
 }
 
-- (void)testAttributedStringContentSizeChange {
+- (void)testLabelAttributedStringFontSizesShouldBeIncreasedByContentSizeCategoryDelta {
     //Arrange
     NSAttributedString *attributedString = [SSAttributedStringValidator testAttributedString];
-    self.dynamicLabel.dynamicAttributedText = attributedString;
-    self.dynamicLabelFromXib.dynamicAttributedText = attributedString;
 
-    //Act
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray<SSDynamicLabel *> *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:self.dynamicLabel.attributedText
-                                                            changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
-    XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:self.dynamicLabelFromXib.attributedText
-                                                            changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
 
-    XCTAssertEqualObjects(attributedString, self.dynamicLabel.dynamicAttributedText);
-    XCTAssertEqualObjects(attributedString, self.dynamicLabelFromXib.dynamicAttributedText);
+    for (SSDynamicLabel *label in dynamicLabels) {
+        //Act
+        label.dynamicAttributedText = attributedString;
+
+        //Assert
+        XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:label.attributedText
+                                                                changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+
+        XCTAssertEqualObjects(label.dynamicAttributedText, attributedString);
+    }
 }
 
 @end

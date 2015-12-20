@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25DE1D35E98A96562C2C3C9F /* libPods-SSDynamicTextExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A40B656FCA8C692363D81440 /* libPods-SSDynamicTextExample.a */; };
-		5E90DACD19F9655600257F8E /* SSDynamicTextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E90DACC19F9655600257F8E /* SSDynamicTextTests.m */; };
+		4181AA311C30229E0000DDC1 /* SSDynamicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F41B9461E60098E793 /* SSDynamicsView.m */; };
 		5EE286D7180239B800D286ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286D6180239B800D286ED /* Foundation.framework */; };
 		5EE286D9180239B800D286ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286D8180239B800D286ED /* CoreGraphics.framework */; };
 		5EE286DB180239B800D286ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286DA180239B800D286ED /* UIKit.framework */; };
@@ -49,7 +49,6 @@
 		46106B6E541D73855CEB3345 /* Pods-SSDynamicTextTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextTests/Pods-SSDynamicTextTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E90DAC819F9655600257F8E /* SSDynamicTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSDynamicTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E90DACB19F9655600257F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E90DACC19F9655600257F8E /* SSDynamicTextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextTests.m; sourceTree = "<group>"; };
 		5EE286D3180239B800D286ED /* SSDynamicTextExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSDynamicTextExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE286D6180239B800D286ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EE286D8180239B800D286ED /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -111,9 +110,6 @@
 		5E90DAC919F9655600257F8E /* SSDynamicTextTests */ = {
 			isa = PBXGroup;
 			children = (
-				B70414E41BAAF5750055958F /* SSTestsHelper.h */,
-				B70414E51BAAF5750055958F /* SSTestsHelper.m */,
-				5E90DACC19F9655600257F8E /* SSDynamicTextTests.m */,
 				B74328EF1B9455DC0098E793 /* SSDynamicLabelTests.m */,
 				B74328F61B946E2A0098E793 /* SSDynamicTextFieldTests.m */,
 				B74328F81B946EEB0098E793 /* SSDynamicTextViewTests.m */,
@@ -122,6 +118,8 @@
 				6696C9C11C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m */,
 				667FF3871C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m */,
 				6611CBF41C0E52CC003E68A3 /* UIView+SSTextSizeTests.m */,
+				B70414E41BAAF5750055958F /* SSTestsHelper.h */,
+				B70414E51BAAF5750055958F /* SSTestsHelper.m */,
 				B74328FC1B9476010098E793 /* SSAttributedStringValidator.h */,
 				B74328FD1B9476010098E793 /* SSAttributedStringValidator.m */,
 				5E90DACA19F9655600257F8E /* Supporting Files */,
@@ -377,11 +375,11 @@
 			files = (
 				B74328F01B9455DC0098E793 /* SSDynamicLabelTests.m in Sources */,
 				B74328F91B946EEB0098E793 /* SSDynamicTextViewTests.m in Sources */,
+				4181AA311C30229E0000DDC1 /* SSDynamicsView.m in Sources */,
 				B74328F71B946E2A0098E793 /* SSDynamicTextFieldTests.m in Sources */,
 				B74328FE1B9476010098E793 /* SSAttributedStringValidator.m in Sources */,
 				6696C9C21C14E7880067D4A4 /* SSDynamicViewsReleaseTests.m in Sources */,
 				661812031C0CED6C00F558EC /* UIFont+SSTextSizeTests.m in Sources */,
-				5E90DACD19F9655600257F8E /* SSDynamicTextTests.m in Sources */,
 				6611CBF51C0E52CC003E68A3 /* UIView+SSTextSizeTests.m in Sources */,
 				667FF3881C0E4B0A00973E4C /* UIApplication+SSTextSizeTests.m in Sources */,
 				B70414E61BAAF5750055958F /* SSTestsHelper.m in Sources */,
