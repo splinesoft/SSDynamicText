@@ -3,7 +3,7 @@
 //  SSDynamicTextExample
 //
 //  Created by Remigiusz Herba on 17/09/15.
-//  
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
 #import "SSTestsHelper.h"
@@ -19,6 +19,10 @@ static id bundleMock;
 @implementation SSTestsHelper
 
 + (void)startMockingPreferredContentSizeCategory:(NSString *)contentSizeCategory {
+    if (applicationMock) {
+        [self stopMockingPreferredContentSizeCategory];
+    }
+
     applicationMock = OCMPartialMock([UIApplication sharedApplication]);
     OCMStub([applicationMock preferredContentSizeCategory]).andReturn(contentSizeCategory);
 }
@@ -33,6 +37,10 @@ static id bundleMock;
 }
 
 + (void)startMockingBundleDictionary:(NSDictionary *)dictionary {
+    if (bundleMock) {
+        [self stopMockingBundleDictionary];
+    }
+
     bundleMock = OCMPartialMock([NSBundle mainBundle]);
     OCMStub([bundleMock infoDictionary]).andReturn(dictionary);
 }

@@ -3,32 +3,26 @@
 //  SSDynamicTextExample
 //
 //  Created by Remigiusz Herba on 31/08/15.
-//  
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
-#import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import <SSDynamicButton.h>
-#import "SSDynamicsView.h"
-#import "SSAttributedStringValidator.h"
 #import "SSTestsHelper.h"
+#import "SSAttributedStringValidator.h"
+
+#import "SSDynamicButton.h"
+#import "SSDynamicsView.h"
 
 @interface SSDynamicButtonTests : XCTestCase
-
-@property (nonatomic, strong) SSDynamicButton *dynamicButton;
-@property (nonatomic, strong) SSDynamicButton *dynamicButtonFromXib;
-
 @end
 
 @implementation SSDynamicButtonTests
 
 - (void)setUp {
     [super setUp];
-    self.dynamicButton = [SSDynamicButton buttonWithFont:SSTestFontName baseSize:SSTestFontSize];
 
-    SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
-    self.dynamicButtonFromXib = view.button;
-    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+    //Default content size category
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryLarge];
 }
 
 - (void)tearDown {
@@ -36,38 +30,99 @@
     [super tearDown];
 }
 
-- (void)testDefaultSettings {
-    //Assert
-    XCTAssertEqualObjects(self.dynamicButton.titleLabel.font.fontName, SSTestFontName);
-    XCTAssertEqualObjects(self.dynamicButtonFromXib.titleLabel.font.fontName, SSTestFontName);
-    XCTAssertEqual(self.dynamicButton.titleLabel.font.pointSize, SSTestFontSize);
-    XCTAssertEqual(self.dynamicButtonFromXib.titleLabel.font.pointSize, SSTestFontSize);
+- (NSArray<SSDynamicButton *> *)dynamicButtonsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+    SSDynamicButton *dynamicButtonWithFont = [SSDynamicButton buttonWithFont:fontName baseSize:fontSize];
+
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+    SSDynamicButton *dynamicButtonWithFontDescriptor = [SSDynamicButton buttonWithFontDescriptor:fontDescriptor];
+
+    SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
+    SSDynamicButton *dynamicButtonFromXib = view.button;
+
+    return @[ dynamicButtonWithFont, dynamicButtonWithFontDescriptor, dynamicButtonFromXib ];
 }
 
-- (void)testContentSizeChange {
+- (void)testButtonTitleLabelFontNameShouldBeEqualToFontNameFromConstructor {
+    //Arrange
+    NSString *expectedFontName = SSTestFontName;
+
     //Act
-    [SSTestsHelper postContentSizeChangeNotification];
+    NSArray<SSDynamicButton *> *dynamicButtons = [self dynamicButtonsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertEqual(self.dynamicButton.titleLabel.font.pointSize, SSTestFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
-    XCTAssertEqual(self.dynamicButtonFromXib.titleLabel.font.pointSize, SSTestFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge);
+    for (SSDynamicButton *button in dynamicButtons) {
+        //Assert
+        XCTAssertEqualObjects(button.titleLabel.font.fontName, expectedFontName);
+    }
 }
 
-- (void)testAttributedStringContentSizeChange {
+- (void)testButtonTitleLabelFontSizeShouldBeEqualToFontSizeInConstructorForDefaultPreferredContentSizeCategory {
+    //Arrange
+    CGFloat expectedFontSize = SSTestFontSize;
+
+    //Act
+    NSArray<SSDynamicButton *> *dynamicButtons = [self dynamicButtonsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+
+    for (SSDynamicButton *button in dynamicButtons) {
+        //Assert
+        XCTAssertEqualWithAccuracy(button.titleLabel.font.pointSize, expectedFontSize, FLT_EPSILON);
+    }
+}
+
+- (void)testButtonTitleLabelFontSizeShouldBeEqualToLabelFontSizeIncreasedByPreferredContentSizeCategoryDelta {
+    // Arrange
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+
+    CGFloat initialFontSize = SSTestFontSize;
+
+    //Act
+    NSArray<SSDynamicButton *> *dynamicButtons = [self dynamicButtonsWithFontName:SSTestFontName fontSize:initialFontSize];
+
+    for (SSDynamicButton *button in dynamicButtons) {
+
+        //Assert
+        XCTAssertEqualWithAccuracy(button.titleLabel.font.pointSize, initialFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
+    }
+}
+
+/**
+ Uncomment after fix: https://github.com/splinesoft/SSDynamicText/issues/27
+- (void)testButtonTitleLabelFontSizeShouldBeEqualToNewFontSizeIncreasedByContentSizeCategoryDelta {
+    //Arrange
+    CGFloat newFontSize = 7.0f;
+    UIFont *newFont = [UIFont systemFontOfSize:newFontSize];
+
+    NSArray<SSDynamicButton *> *dynamicButtons = [self dynamicButtonsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+    
+    for (SSDynamicButton *button in dynamicButtons) {
+        //Act
+        button.titleLabel.font = newFont;
+
+        //Assert
+        XCTAssertEqualWithAccuracy(button.titleLabel.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
+    }
+}
+ */
+
+- (void)testButtonTitleLabelAttributedStringFontSizesShouldBeIncreasedByContentSizeCategoryDelta {
     //Arrange
     NSAttributedString *attributedString = [SSAttributedStringValidator testAttributedString];
-    [self.dynamicButton setAttributedTitle:attributedString forState:UIControlStateNormal];
-    [self.dynamicButtonFromXib setAttributedTitle:attributedString forState:UIControlStateNormal];
-    [SSTestsHelper postContentSizeChangeNotification];
 
-    //Act
-    [[NSNotificationCenter defaultCenter] postNotificationName:UIContentSizeCategoryDidChangeNotification object:nil];
+    NSArray<SSDynamicButton *> *dynamicButtons = [self dynamicButtonsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
-    //Assert
-    XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:self.dynamicButton.titleLabel.attributedText
-                                                            changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
-    XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:self.dynamicButtonFromXib.titleLabel.attributedText
-                                                            changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+
+    for (SSDynamicButton *button in dynamicButtons) {
+        //Act
+        [button setAttributedTitle:attributedString forState:UIControlStateNormal];
+
+        //Assert
+        XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:button.titleLabel.attributedText
+                                                                changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+
+        XCTAssertEqualObjects(button.titleLabel.attributedText.string, attributedString.string);
+    }
 }
 
 @end
