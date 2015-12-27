@@ -1,5 +1,10 @@
 # SSDynamicText CHANGELOG
 
+## 0.5.1
+###### unreleased
+
+- **(fixed)** Fixed `titleLabel` font upgrade for `SSDynamicButton` after font change, [#27](https://github.com/splinesoft/SSDynamicText/issues/8). _([Grubas7](https://github.com/Grubas7))_
+
 ## 0.5.0
 ###### October 5, 2015
 

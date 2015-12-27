@@ -84,8 +84,6 @@
     }
 }
 
-/**
- Uncomment after fix: https://github.com/splinesoft/SSDynamicText/issues/27
 - (void)testButtonTitleLabelFontSizeShouldBeEqualToNewFontSizeIncreasedByContentSizeCategoryDelta {
     //Arrange
     CGFloat newFontSize = 7.0f;
@@ -103,9 +101,8 @@
         XCTAssertEqualWithAccuracy(button.titleLabel.font.pointSize, newFontSize + SSTestFontSizeDifferenceForSizeExtraExtraLarge, FLT_EPSILON);
     }
 }
- */
 
-- (void)testButtonTitleLabelAttributedStringFontSizesShouldBeIncreasedByContentSizeCategoryDelta {
+- (void)testButtonTitleLabelAttributedTitleFontSizesShouldBeIncreasedByContentSizeCategoryDelta {
     //Arrange
     NSAttributedString *attributedString = [SSAttributedStringValidator testAttributedString];
 
@@ -120,8 +117,6 @@
         //Assert
         XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:button.titleLabel.attributedText
                                                                 changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
-
-        XCTAssertEqualObjects(button.titleLabel.attributedText.string, attributedString.string);
     }
 }
 

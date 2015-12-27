@@ -27,28 +27,35 @@ typedef void (^SSTextSizeChangedBlock) (NSInteger);
  * When the user changes her preferred text size, the callback block is called with the
  * new text size delta from the default.
  */
-- (void) ss_startObservingTextSizeChangesWithBlock:(SSTextSizeChangedBlock)block;
+- (void)ss_startObservingTextSizeChangesWithBlock:(SSTextSizeChangedBlock)block;
 
 /**
  * Stop observing changes to text size.
  */
-- (void) ss_stopObservingTextSizeChanges;
+- (void)ss_stopObservingTextSizeChanges;
 
 /**
  * Force a recalculation of our preferred text size.
  */
-- (void) preferredContentSizeDidChange;
+- (void)preferredContentSizeDidChange;
 
 /**
  * Default FontName if set in Info.plist or systemFontName if not set
  * Key: kSSDynamicDefaultFontName
  */
-- (NSString *) ss_defaultFontName;
+- (NSString *)ss_defaultFontName;
 
 /**
  * DefaultBaseSize if set in Info.plist or 16.0 if not set
  * Key: kSSDynamicDefaultBaseSize
  */
-- (CGFloat) ss_defaultBaseSize;
+- (CGFloat)ss_defaultBaseSize;
+
+/**
+ * Sets `defaultFontDescriptor` based on font parameter.
+ * If font parameter is `nil`, sets `defaultFontDesciptor` with default font name and default base size.
+ * @see defaultFontDescriptor, ss_defaultFontName, ss_defaultBaseSize.
+ */
+- (void)setupDefaultFontDescriptorBasedOnFont:(UIFont *)font;
 
 @end

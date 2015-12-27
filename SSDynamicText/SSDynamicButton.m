@@ -3,7 +3,7 @@
 //  SSDynamicText
 //
 //  Created by Adam Grzegorowski on 18/07/15.
-//
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
 #import "SSDynamicButton.h"
@@ -14,8 +14,6 @@
 @interface SSDynamicButton ()
 
 @property (nonatomic, strong) NSMutableDictionary *baseAttributedTitlesDictionary;
-
-- (void)setup;
 
 @end
 
@@ -39,7 +37,7 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:frame])) {
+    if (self = [super initWithFrame:frame]) {
         [self setup];
     }
 
@@ -50,20 +48,7 @@
     [super awakeFromNib];
 
     NSAssert(self.buttonType == UIButtonTypeCustom, @"Change SSDynamicButton.buttonType to UIButtonTypeCustom in your nib");
-    NSString *fontName;
-    CGFloat baseSize = 0;
-
-    if (self.titleLabel.font) {
-        fontName = self.titleLabel.font.fontName;
-        baseSize = self.titleLabel.font.pointSize;
-    }
-
-    fontName = (fontName ?: [self ss_defaultFontName]);
-    baseSize = (baseSize ?: [self ss_defaultBaseSize]);
-
-    self.defaultFontDescriptor = (self.titleLabel.font.fontDescriptor ?:
-                                  [UIFontDescriptor fontDescriptorWithName:fontName
-                                                                      size:baseSize]);
+    [self setupDefaultFontDescriptorBasedOnFont:self.titleLabel.font];
 
     [self setup];
 }
@@ -82,14 +67,18 @@
 
 - (void)dealloc {
     [self ss_stopObservingTextSizeChanges];
+    [self removeTitleLabelFontObserver];
 }
 
 - (void)changeFontWithDelta:(NSInteger)newDelta {
     CGFloat preferredSize = [self.defaultFontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute] floatValue];
     preferredSize += newDelta;
 
+    [self removeTitleLabelFontObserver];
     self.titleLabel.font = [UIFont fontWithDescriptor:self.defaultFontDescriptor
                                                  size:preferredSize];
+
+    [self addTitleLabelFontObserver];
 }
 
 - (void)changeAttributedTitle:(NSAttributedString *)attributedTitle forState:(UIControlState)state withFontSizeDelta:(NSInteger)newDelta {
@@ -98,12 +87,14 @@
 
 - (void)changeAttributedStringWithDelta:(NSInteger)newDelta {
     [self.baseAttributedTitlesDictionary enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, NSAttributedString *obj, BOOL *stop) {
-        [self changeAttributedTitle:obj forState:key.integerValue withFontSizeDelta:newDelta];
+        [self changeAttributedTitle:obj forState:key.unsignedIntegerValue withFontSizeDelta:newDelta];
     }];
 }
 
 - (void)setup {
     __weak typeof(self) weakSelf = self;
+
+    [self addTitleLabelFontObserver];
 
     SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {
 
@@ -112,6 +103,29 @@
     };
 
     [self ss_startObservingTextSizeChangesWithBlock:changeHandler];
+}
+
+#pragma mark - Font observing
+
+- (void)addTitleLabelFontObserver {
+    [self.titleLabel addObserver:self forKeyPath:NSStringFromSelector(@selector(font)) options:NSKeyValueObservingOptionNew context:NULL];
+}
+
+- (void)removeTitleLabelFontObserver {
+    [self.titleLabel removeObserver:self forKeyPath:NSStringFromSelector(@selector(font))];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(font))]) {
+
+        NSInteger newDelta = [UIApplication sharedApplication].preferredFontSizeDelta;
+        [self setupDefaultFontDescriptorBasedOnFont:self.titleLabel.font];
+
+        [self changeFontWithDelta:newDelta];
+        [self changeAttributedStringWithDelta:newDelta];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
 }
 
 @end

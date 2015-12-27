@@ -3,7 +3,7 @@
 //  SSDynamicText
 //
 //  Created by Adam Grzegorowski on 18/07/15.
-//
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
 #import <UIKit/UIKit.h>
