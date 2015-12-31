@@ -32,11 +32,11 @@
 
 - (void)setFont:(UIFont *)font {
     [super setFont:font];
-    [self setupBaseFontBasedOnCurrentFont];
+    [self setupDefaultFontDescriptorBasedOnFont:self.font];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:frame])) {
+    if (self = [super initWithFrame:frame]) {
         [self startObservingTextSizeChanges];
     }
     
@@ -46,7 +46,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 
-    [self setupBaseFontBasedOnCurrentFont];
+    [self setupDefaultFontDescriptorBasedOnFont:self.font];
     [self startObservingTextSizeChanges];
 }
 
@@ -81,23 +81,6 @@
         weakSelf.attributedText = attributedText;
     };
     return changer;
-}
-
-- (void)setupBaseFontBasedOnCurrentFont {
-    NSString *fontName;
-    CGFloat baseSize = 0;
-
-    if (self.font) {
-        fontName = self.font.fontName;
-        baseSize = self.font.pointSize;
-    }
-
-    fontName = (fontName ?: [self ss_defaultFontName]);
-    baseSize = (baseSize ?: [self ss_defaultBaseSize]);
-
-    self.defaultFontDescriptor = (self.font.fontDescriptor ?:
-                                  [UIFontDescriptor fontDescriptorWithName:fontName
-                                                                      size:baseSize]);
 }
 
 - (void)startObservingTextSizeChanges {
