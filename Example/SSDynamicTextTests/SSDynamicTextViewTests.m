@@ -30,16 +30,24 @@
     [super tearDown];
 }
 
-- (NSArray *)dynamicTextViewsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
-    SSDynamicTextView *dynamicTextViewWithFont = [SSDynamicTextView textViewWithFont:fontName baseSize:fontSize];
+- (NSArray<SSDynamicsView *> *)dynamicTextViewsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
 
     UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+
+    SSDynamicTextView *dynamicTextView = [[SSDynamicTextView alloc] init];
+    dynamicTextView.defaultFontDescriptor = fontDescriptor;
+
+    SSDynamicTextView *dynamicTextViewWithFrame = [[SSDynamicTextView alloc] initWithFrame:CGRectZero];
+    dynamicTextViewWithFrame.font = [UIFont fontWithName:fontName size:fontSize];
+
+    SSDynamicTextView *dynamicTextViewWithFont = [SSDynamicTextView textViewWithFont:fontName baseSize:fontSize];
+
     SSDynamicTextView *dynamicTextViewWithFontDescriptor = [SSDynamicTextView textViewWithFontDescriptor:fontDescriptor];
 
     SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
     SSDynamicTextView *dynamicTextViewFromXib = view.textView;
 
-    return @[ dynamicTextViewWithFont, dynamicTextViewWithFontDescriptor, dynamicTextViewFromXib ];
+    return @[ dynamicTextView, dynamicTextViewWithFrame, dynamicTextViewWithFont, dynamicTextViewWithFontDescriptor, dynamicTextViewFromXib ];
 }
 
 - (void)testTextViewFontNameShouldBeEqualToFontNameFromConstructor {
@@ -89,7 +97,7 @@
     CGFloat newFontSize = 7.0f;
     UIFont *newFont = [UIFont systemFontOfSize:newFontSize];
 
-    NSArray *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+    NSArray<SSDynamicTextView *> *dynamicTextViews = [self dynamicTextViewsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
     [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
 

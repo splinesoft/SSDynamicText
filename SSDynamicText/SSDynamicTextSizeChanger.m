@@ -3,7 +3,7 @@
 //  SSDynamicText
 //
 //  Created by Remigiusz Herba on 15/09/15.
-//
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
 #import "SSDynamicTextSizeChanger.h"
@@ -53,7 +53,7 @@
 }
 
 - (void)setDynamicAttributedText:(NSAttributedString *)attributedText {
-    self.baseAttributedText = attributedText;
+    self.baseAttributedText = [attributedText copy];
     [self changeAttributedStringFontWithDelta:[UIApplication sharedApplication].preferredFontSizeDelta];
 }
 

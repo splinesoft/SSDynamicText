@@ -17,7 +17,7 @@
  * @param fontName Name of the font to use
  * @param baseSize Base size to use, offset by the user's preferred size.
  */
-+ (instancetype) dynamicFontWithName:(NSString *)fontName 
-                            baseSize:(CGFloat)baseSize;
++ (nullable instancetype)dynamicFontWithName:(nonnull NSString *)fontName
+                                    baseSize:(CGFloat)baseSize;
 
 @end

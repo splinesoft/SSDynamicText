@@ -19,23 +19,6 @@
 
 @implementation SSDynamicButton
 
-- (NSMutableDictionary *)baseAttributedTitlesDictionary {
-    if (_baseAttributedTitlesDictionary == nil) {
-        _baseAttributedTitlesDictionary = [NSMutableDictionary dictionary];
-    }
-    return _baseAttributedTitlesDictionary;
-}
-
-- (void)setAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state {
-    NSNumber *key = @(state);
-    if (title) {
-        [self.baseAttributedTitlesDictionary setObject:title forKey:key];
-    } else {
-        [self.baseAttributedTitlesDictionary removeObjectForKey:key];
-    }
-    [self changeAttributedTitle:title forState:state withFontSizeDelta:[UIApplication sharedApplication].preferredFontSizeDelta];
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self setup];
@@ -70,6 +53,32 @@
     [self removeTitleLabelFontObserver];
 }
 
+- (void)setAttributedTitle:(NSAttributedString *)title forState:(UIControlState)state {
+    NSNumber *key = @(state);
+    if (title) {
+        [self.baseAttributedTitlesDictionary setObject:title forKey:key];
+    } else {
+        [self.baseAttributedTitlesDictionary removeObjectForKey:key];
+    }
+    [self changeAttributedTitle:title forState:state withFontSizeDelta:[UIApplication sharedApplication].preferredFontSizeDelta];
+}
+
+#pragma mark - Private methods
+
+- (void)setup {
+    __weak typeof(self) weakSelf = self;
+
+    [self addTitleLabelFontObserver];
+
+    SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {
+
+        [weakSelf changeFontWithDelta:newDelta];
+        [weakSelf changeAttributedStringWithDelta:newDelta];
+    };
+
+    [self ss_startObservingTextSizeChangesWithBlock:changeHandler];
+}
+
 - (void)changeFontWithDelta:(NSInteger)newDelta {
     CGFloat preferredSize = [self.defaultFontDescriptor.fontAttributes[UIFontDescriptorSizeAttribute] floatValue];
     preferredSize += newDelta;
@@ -86,23 +95,18 @@
 }
 
 - (void)changeAttributedStringWithDelta:(NSInteger)newDelta {
-    [self.baseAttributedTitlesDictionary enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, NSAttributedString *obj, BOOL *stop) {
-        [self changeAttributedTitle:obj forState:key.unsignedIntegerValue withFontSizeDelta:newDelta];
+    [self.baseAttributedTitlesDictionary enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, NSAttributedString *title, BOOL *stop) {
+        [self changeAttributedTitle:title forState:key.unsignedIntegerValue withFontSizeDelta:newDelta];
     }];
 }
 
-- (void)setup {
-    __weak typeof(self) weakSelf = self;
+#pragma mark - Accessors
 
-    [self addTitleLabelFontObserver];
-
-    SSTextSizeChangedBlock changeHandler = ^(NSInteger newDelta) {
-
-        [weakSelf changeFontWithDelta:newDelta];
-        [weakSelf changeAttributedStringWithDelta:newDelta];
-    };
-
-    [self ss_startObservingTextSizeChangesWithBlock:changeHandler];
+- (NSMutableDictionary *)baseAttributedTitlesDictionary {
+    if (_baseAttributedTitlesDictionary == nil) {
+        _baseAttributedTitlesDictionary = [NSMutableDictionary dictionary];
+    }
+    return _baseAttributedTitlesDictionary;
 }
 
 #pragma mark - Font observing

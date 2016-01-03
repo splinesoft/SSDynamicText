@@ -9,6 +9,10 @@ What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only 
 
 SSDynamicText is a collection of simple `UILabel`, `UIButton`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
 
+## Requirements
+
+Xcode 7.0+ with iOS 7.0+ SDK.
+
 ## Install
 
 Install with [CocoaPods](http://cocoapods.org). Add to your `Podfile`:

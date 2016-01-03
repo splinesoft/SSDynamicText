@@ -31,15 +31,22 @@
 }
 
 - (NSArray<SSDynamicButton *> *)dynamicButtonsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+
+    SSDynamicButton *dynamicButton = [[SSDynamicButton alloc] init];
+    dynamicButton.defaultFontDescriptor = fontDescriptor;
+
+    SSDynamicButton *dynamicButtonWithFrame = [[SSDynamicButton alloc] initWithFrame:CGRectZero];
+    dynamicButtonWithFrame.titleLabel.font = [UIFont fontWithName:fontName size:fontSize];
+
     SSDynamicButton *dynamicButtonWithFont = [SSDynamicButton buttonWithFont:fontName baseSize:fontSize];
 
-    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
     SSDynamicButton *dynamicButtonWithFontDescriptor = [SSDynamicButton buttonWithFontDescriptor:fontDescriptor];
 
     SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
     SSDynamicButton *dynamicButtonFromXib = view.button;
 
-    return @[ dynamicButtonWithFont, dynamicButtonWithFontDescriptor, dynamicButtonFromXib ];
+    return @[ dynamicButton, dynamicButtonWithFrame, dynamicButtonWithFont, dynamicButtonWithFontDescriptor, dynamicButtonFromXib ];
 }
 
 - (void)testButtonTitleLabelFontNameShouldBeEqualToFontNameFromConstructor {
@@ -102,7 +109,7 @@
     }
 }
 
-- (void)testButtonTitleLabelAttributedTitleFontSizesShouldBeIncreasedByContentSizeCategoryDelta {
+- (void)testButtonTitleLabelAttributedTitleFontSizesShouldBeIncreasedByContentSizeCategoryDeltaAfterSetAttributedTitle {
     //Arrange
     NSAttributedString *attributedString = [SSAttributedStringValidator testAttributedString];
 
@@ -115,7 +122,28 @@
         [button setAttributedTitle:attributedString forState:UIControlStateNormal];
 
         //Assert
-        XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:button.titleLabel.attributedText
+        XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:[button attributedTitleForState:UIControlStateNormal]
+                                                                changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
+    }
+}
+
+- (void)testButtonTitleLabelAttributedTitleFontSizesShouldBeIncreasedByContentSizeCategoryDeltaAfterPostContentSizeChangeNotification {
+    //Arrange
+    NSAttributedString *attributedString = [SSAttributedStringValidator testAttributedString];
+
+    NSArray<SSDynamicButton *> *dynamicButtons = [self dynamicButtonsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+
+    for (SSDynamicButton *button in dynamicButtons) {
+        [button setAttributedTitle:attributedString forState:UIControlStateNormal];
+    }
+
+    [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
+    //Act
+    [SSTestsHelper postContentSizeChangeNotification];
+
+    for (SSDynamicButton *button in dynamicButtons) {
+        //Assert
+        XCTAssertTrue([SSAttributedStringValidator isValidTestAttributedString:[button attributedTitleForState:UIControlStateNormal]
                                                                 changedByDelta:SSTestFontSizeDifferenceForSizeExtraExtraLarge]);
     }
 }

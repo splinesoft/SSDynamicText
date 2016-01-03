@@ -30,16 +30,23 @@
     [super tearDown];
 }
 
-- (NSArray *)dynamicLabelsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+- (NSArray<SSDynamicLabel *> *)dynamicLabelsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+
+    SSDynamicLabel *dynamicLabel = [[SSDynamicLabel alloc] init];
+    dynamicLabel.defaultFontDescriptor = fontDescriptor;
+
+    SSDynamicLabel *dynamicLabelWithFrame = [[SSDynamicLabel alloc] initWithFrame:CGRectZero];
+    dynamicLabelWithFrame.font = [UIFont fontWithName:fontName size:fontSize];
+
     SSDynamicLabel *dynamicLabelWithFont = [SSDynamicLabel labelWithFont:fontName baseSize:fontSize];
 
-    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
     SSDynamicLabel *dynamicLabelWithFontDescriptor = [SSDynamicLabel labelWithFontDescriptor:fontDescriptor];
 
     SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
     SSDynamicLabel *dynamicLabelFromXib = view.label;
 
-    return @[ dynamicLabelWithFont, dynamicLabelWithFontDescriptor, dynamicLabelFromXib ];
+    return @[ dynamicLabel, dynamicLabelWithFrame, dynamicLabelWithFont, dynamicLabelWithFontDescriptor, dynamicLabelFromXib ];
 }
 
 - (void)testLabelFontNameShouldBeEqualToFontNameFromConstructor {
@@ -47,7 +54,7 @@
     NSString *expectedFontName = SSTestFontName;
 
     //Act
-    NSArray *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+    NSArray<SSDynamicLabel *> *dynamicLabels = [self dynamicLabelsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
     for (SSDynamicLabel *label in dynamicLabels) {
         //Assert

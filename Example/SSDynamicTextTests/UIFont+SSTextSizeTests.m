@@ -21,7 +21,7 @@
 - (void)testDynamicFontWithNameBaseSizeShouldReturnFontWithSizeIncreasedOfPreferredFontSizeDelta {
 
     //Arrange
-    NSArray *contentSizeCategories = @[
+    NSArray<NSString *> *contentSizeCategories = @[
         UIContentSizeCategoryExtraSmall,
         UIContentSizeCategorySmall,
         UIContentSizeCategoryMedium,

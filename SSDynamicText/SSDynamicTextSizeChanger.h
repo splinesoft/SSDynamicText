@@ -3,10 +3,11 @@
 //  SSDynamicText
 //
 //  Created by Remigiusz Herba on 15/09/15.
-//
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+
 #import "SSDynamicAttributedTextSizable.h"
 #import "UIView+SSTextSize.h"
 
@@ -17,21 +18,21 @@
  * Its size is adjusted up (or down) based on the user's preferred text size.
  * Updating this will change the view's font.
  */
-@property (nonatomic, strong) UIFontDescriptor *defaultFontDescriptor;
+@property (nonatomic, strong, nullable) UIFontDescriptor *defaultFontDescriptor;
 
 /**
  * The default block called by view when font size change.
  */
-@property (nonatomic, readonly) SSTextSizeChangedBlock changeHandler;
+@property (nonatomic, readonly, nullable) SSTextSizeChangedBlock changeHandler;
 
 /**
  * Block which is called when SSDynamicTextSizeChanger want to change font, view should configure this block.
  */
-@property (nonatomic, copy) void(^fontChangeBlock)(UIFont *font);
+@property (nonatomic, copy, nullable) void(^fontChangeBlock)(UIFont * __nullable font);
 
 /**
  * Block which is called when SSDynamicTextSizeChanger want to change attributedText, view should configure this block.
  */
-@property (nonatomic, copy) void(^attributedTextChangeBlock)(NSAttributedString *attributedString);
+@property (nonatomic, copy, nullable) void(^attributedTextChangeBlock)(NSAttributedString * __nullable attributedString);
 
 @end
