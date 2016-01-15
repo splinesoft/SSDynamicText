@@ -11,29 +11,11 @@
 
 @interface SSDynamicTextField ()
 
-@property (nonatomic, copy) NSAttributedString *baseAttributedText;
 @property (nonatomic, strong) SSDynamicTextSizeChanger *textSizeChanger;
 
 @end
 
 @implementation SSDynamicTextField
-
-- (SSDynamicTextSizeChanger *)textSizeChanger {
-    if (_textSizeChanger == nil) {
-        _textSizeChanger = [self createTextChanger];
-    }
-    return _textSizeChanger;
-}
-
-- (void)setDefaultFontDescriptor:(UIFontDescriptor *)defaultFontDescriptor {
-    self.textSizeChanger.defaultFontDescriptor = defaultFontDescriptor;
-    [super setDefaultFontDescriptor:defaultFontDescriptor];
-}
-
-- (void)setFont:(UIFont *)font {
-    [super setFont:font];
-    [self setupDefaultFontDescriptorBasedOnFont:self.font];
-}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -67,7 +49,26 @@
     [self ss_stopObservingTextSizeChanges];
 }
 
+#pragma mark - Accessors
+
+- (void)setDefaultFontDescriptor:(UIFontDescriptor *)defaultFontDescriptor {
+    self.textSizeChanger.defaultFontDescriptor = defaultFontDescriptor;
+    super.defaultFontDescriptor = defaultFontDescriptor;
+}
+
+- (void)setFont:(UIFont *)font {
+    [super setFont:font];
+    [self setupDefaultFontDescriptorBasedOnFont:self.font];
+}
+
 #pragma mark - Private Methods
+
+- (SSDynamicTextSizeChanger *)textSizeChanger {
+    if (_textSizeChanger == nil) {
+        _textSizeChanger = [self createTextChanger];
+    }
+    return _textSizeChanger;
+}
 
 - (SSDynamicTextSizeChanger *)createTextChanger {
     SSDynamicTextSizeChanger *changer = [[SSDynamicTextSizeChanger alloc] init];

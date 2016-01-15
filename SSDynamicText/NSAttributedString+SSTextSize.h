@@ -3,10 +3,10 @@
 //  SSDynamicText
 //
 //  Created by Remigiusz Herba on 28/08/15.
-//
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 @interface NSAttributedString (SSTextSize)
 
@@ -17,6 +17,6 @@
  * A positive number will increase font size.
  * @return new NSAttributedString object with font size changed by delta.
  */
-- (NSAttributedString *)ss_attributedStringWithAdjustedFontSizeWithDelta:(NSInteger)delta;
+- (nonnull NSAttributedString *)ss_attributedStringWithAdjustedFontSizeWithDelta:(NSInteger)delta;
 
 @end

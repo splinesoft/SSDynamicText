@@ -20,12 +20,14 @@
  * Create a dynamic-sizing label that will adjust its size in response to changes
  * to the user's preferred text size.
  */
-+ (instancetype) labelWithFont:(NSString *)fontName 
-                      baseSize:(CGFloat)size;
++ (nonnull instancetype)labelWithFont:(nonnull NSString *)fontName
+                             baseSize:(CGFloat)size;
 
 /**
  * Create a dynamic-sizing label using a base font descriptor.
+ * If `descriptor` is nil, sets font descriptor with `-ss_defaultFontName` and `-ss_defaultBaseSize` values.
+ * @see ss_defaultFontName, ss_defaultBaseSize.
  */
-+ (instancetype) labelWithFontDescriptor:(UIFontDescriptor *)descriptor;
++ (nonnull instancetype)labelWithFontDescriptor:(nullable UIFontDescriptor *)descriptor;
 
 @end

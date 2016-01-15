@@ -30,16 +30,23 @@
     [super tearDown];
 }
 
-- (NSArray *)dynamicTextFieldsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+- (NSArray<SSDynamicTextField *> *)dynamicTextFieldsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
+
+    SSDynamicTextField *dynamicTextField = [[SSDynamicTextField alloc] init];
+    dynamicTextField.defaultFontDescriptor = fontDescriptor;
+
+    SSDynamicTextField *dynamicTextFieldWithFrame = [[SSDynamicTextField alloc] initWithFrame:CGRectZero];
+    dynamicTextFieldWithFrame.font = [UIFont fontWithName:fontName size:fontSize];
+
     SSDynamicTextField *dynamicTextFieldWithFont = [SSDynamicTextField textFieldWithFont:fontName baseSize:fontSize];
 
-    UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
     SSDynamicTextField *dynamicTextFieldWithFontDescriptor = [SSDynamicTextField textFieldWithFontDescriptor:fontDescriptor];
 
     SSDynamicsView *view = [[NSBundle mainBundle] loadNibNamed:@"SSDynamicsView" owner:nil options:nil].firstObject;
     SSDynamicTextField *dynamicTextFieldFromXib = view.textField;
 
-    return @[ dynamicTextFieldWithFont, dynamicTextFieldWithFontDescriptor, dynamicTextFieldFromXib ];
+    return @[ dynamicTextField, dynamicTextFieldWithFrame, dynamicTextFieldWithFont, dynamicTextFieldWithFontDescriptor, dynamicTextFieldFromXib ];
 }
 
 - (void)testTextFieldFontNameShouldBeEqualToFontNameFromConstructor {
@@ -89,7 +96,7 @@
     CGFloat newFontSize = 7.0f;
     UIFont *newFont = [UIFont systemFontOfSize:newFontSize];
 
-    NSArray *dynamicTextField = [self dynamicTextFieldsWithFontName:SSTestFontName fontSize:SSTestFontSize];
+    NSArray<SSDynamicTextField *> *dynamicTextField = [self dynamicTextFieldsWithFontName:SSTestFontName fontSize:SSTestFontSize];
 
     [SSTestsHelper startMockingPreferredContentSizeCategory:UIContentSizeCategoryExtraExtraLarge];
 

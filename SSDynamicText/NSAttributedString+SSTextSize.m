@@ -3,7 +3,7 @@
 //  SSDynamicText
 //
 //  Created by Remigiusz Herba on 28/08/15.
-//
+//  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
 #import "NSAttributedString+SSTextSize.h"

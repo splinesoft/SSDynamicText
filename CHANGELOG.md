@@ -4,6 +4,7 @@
 ###### unreleased
 
 - **(fixed)** Fixed `titleLabel` font upgrade for `SSDynamicButton` after font change, [#27](https://github.com/splinesoft/SSDynamicText/issues/8). _([Grubas7](https://github.com/Grubas7))_
+- **(modified)** Changed `ss_defaultFontName`, and `ss_defaultBaseSize` from methods to readonly properties. _([Grubas7](https://github.com/Grubas7))_
 
 ## 0.5.0
 ###### October 5, 2015

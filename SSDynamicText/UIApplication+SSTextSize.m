@@ -10,8 +10,8 @@
 
 @implementation UIApplication (SSTextSize)
 
-- (NSInteger) preferredFontSizeDelta {
-    static NSArray *fontSizes;
+- (NSInteger)preferredFontSizeDelta {
+    static NSArray<NSString *> *fontSizes;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         fontSizes = @[
