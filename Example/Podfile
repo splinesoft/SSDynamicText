@@ -12,7 +12,7 @@ target :SSDynamicTextExample do
     install_pods
 end
 
-target :SSDynamicTextTests, :exclusive => true do
+target :SSDynamicTextTests do
     install_pods
     pod 'OCMock', '~> 3'
 end

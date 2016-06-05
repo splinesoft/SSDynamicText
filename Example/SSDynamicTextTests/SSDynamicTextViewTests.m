@@ -30,7 +30,7 @@
     [super tearDown];
 }
 
-- (NSArray<SSDynamicsView *> *)dynamicTextViewsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
+- (NSArray<SSDynamicTextView *> *)dynamicTextViewsWithFontName:(NSString *)fontName fontSize:(CGFloat)fontSize {
 
     UIFontDescriptor *fontDescriptor = [UIFontDescriptor fontDescriptorWithName:fontName size:fontSize];
 

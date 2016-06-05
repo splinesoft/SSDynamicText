@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name           = "SSDynamicText"
-  s.version        = "0.5.0"
+  s.version        = "1.0"
   s.summary        = "UILabel/UIButton/UITextField/UITextView subclasses that support custom fonts with iOS 7's dynamic text sizes."
   s.homepage       = "https://github.com/splinesoft/SSDynamicText"
   s.license        = { :type => 'MIT', :file => 'LICENSE'  }
