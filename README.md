@@ -2,7 +2,7 @@ SSDynamicText
 =============
 
 [![Circle CI](https://circleci.com/gh/splinesoft/SSDynamicText.svg?style=svg)](https://circleci.com/gh/splinesoft/SSDynamicText) [![codecov.io](http://codecov.io/github/splinesoft/SSDynamicText/coverage.svg?branch=master)](http://codecov.io/github/splinesoft/SSDynamicText?branch=master)
- 
+
 iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/) is pretty neat. Also pretty neat is dynamic text that responds to the preferred text size that the user specified in Settings.app.
 
 What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue (iOS 8) or San Francisco (iOS 9). What if you have custom fonts and want to respect the user's text size preference?
@@ -17,8 +17,8 @@ Xcode 7.0+ with iOS 7.0+ SDK.
 
 Install with [CocoaPods](http://cocoapods.org). Add to your `Podfile`:
 
-```
-pod 'SSDynamicText', :head # YOLO
+```ruby
+pod 'SSDynamicText', '~> 1.0'
 ```
 
 ## Example usage
@@ -33,7 +33,7 @@ UIKit views that responds when the user changes her preferred text size:
 SSDynamicLabel *myLabel = [SSDynamicLabel labelWithFont:@"Courier"
                                                baseSize:16.0f];
 myLabel.text = @"Auto-sizing text!";
-                                                       
+
 // Already have a font descriptor?
 UIFontDescriptor *aDescriptor = [UIFontDescriptor fontDescriptorWithName:@"Courier"
                                                                     size:16.0f];

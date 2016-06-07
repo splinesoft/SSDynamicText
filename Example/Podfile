@@ -2,17 +2,11 @@ source 'https://github.com/cocoapods/specs.git'
 
 platform :ios, '7.0'
 
-xcodeproj 'SSDynamicTextExample'
-
-def install_pods
-    pod 'SSDynamicText', :path => '../SSDynamicText.podspec'
-end
-
 target :SSDynamicTextExample do
-    install_pods
-end
+  pod 'SSDynamicText', path: '..'
 
-target :SSDynamicTextTests do
-    install_pods
+  target :SSDynamicTextTests do
+    inherit! :search_paths
     pod 'OCMock', '~> 3'
+  end
 end
