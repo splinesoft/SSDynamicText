@@ -17,7 +17,7 @@ test:
       GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES clean test ONLY_ACTIVE_ARCH=NO | xcpretty -c 
       --report junit --output ${CIRCLE_TEST_REPORTS}/junit.xml
     - pod lib lint --quick
-    - obcd --path SSDynamicText find HeaderStyle
+    - obcd --path Pod/Classes find HeaderStyle
 deployment:
   codecov:
     branch: /.*/
