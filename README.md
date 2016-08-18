@@ -15,10 +15,16 @@ Xcode 7.0+ with iOS 7.0+ SDK.
 
 ## Install
 
-Install with [CocoaPods](http://cocoapods.org). Add to your `Podfile`:
+### [CocoaPods](http://cocoapods.org). Add to your `Podfile`:
 
 ```ruby
-pod 'SSDynamicText', '~> 1.0'
+pod 'SSDynamicText', '~> 1.0.0'
+```
+
+### [Carthage](https://github.com/Carthage/Carthage). Add to your `Cartfile`:
+
+```ruby
+github "splinesoft/SSDynamicText", ~> 1.1.0
 ```
 
 ## Example usage

@@ -1,6 +1,11 @@
 # SSDynamicText CHANGELOG
 
-## 1.0
+## 1.1.0
+###### ?
+
+- **(added)** Added Carthage support (by creating SSDynamicText framework target). _([Grubas7](https://github.com/Grubas7))_
+
+## 1.0.0
 ###### June 5, 2016
 
 - **(fixed)** Fixed `titleLabel` font upgrade for `SSDynamicButton` after font change, [#27](https://github.com/splinesoft/SSDynamicText/issues/8). _([Grubas7](https://github.com/Grubas7))_

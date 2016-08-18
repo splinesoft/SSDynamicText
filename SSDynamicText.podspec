@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source         = { git: 'https://github.com/splinesoft/SSDynamicText.git', tag: s.version.to_s }
   s.requires_arc   = true
   s.compiler_flags = '-fmodules'
-  s.source_files   = 'SSDynamicText/*.{h,m}'
+  s.source_files   = 'Pod/Classes/**/*.{h,m}'
   s.frameworks     = 'UIKit'
   s.ios.deployment_target = '7.0'
   s.social_media_url = 'https://twitter.com/jhersh'

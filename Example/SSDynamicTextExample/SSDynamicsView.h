@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SSDynamicText.h>
+#import <SSDynamicText/SSDynamicText.h>
 
 @interface SSDynamicsView : UIView
 
