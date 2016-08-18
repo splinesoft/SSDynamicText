@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4172E51B1D664B620075C207 /* SSDynamicText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E51A1D664B620075C207 /* SSDynamicText.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4172E5351D664C0D0075C207 /* NSAttributedString+SSTextSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5211D664C0D0075C207 /* NSAttributedString+SSTextSize.h */; };
+		4172E5361D664C0D0075C207 /* NSAttributedString+SSTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E5221D664C0D0075C207 /* NSAttributedString+SSTextSize.m */; };
+		4172E5371D664C0D0075C207 /* SSDynamicAttributedTextSizable.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5231D664C0D0075C207 /* SSDynamicAttributedTextSizable.h */; };
+		4172E5381D664C0D0075C207 /* SSDynamicButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5241D664C0D0075C207 /* SSDynamicButton.h */; };
+		4172E5391D664C0D0075C207 /* SSDynamicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E5251D664C0D0075C207 /* SSDynamicButton.m */; };
+		4172E53A1D664C0D0075C207 /* SSDynamicLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5261D664C0D0075C207 /* SSDynamicLabel.h */; };
+		4172E53B1D664C0D0075C207 /* SSDynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E5271D664C0D0075C207 /* SSDynamicLabel.m */; };
+		4172E53D1D664C0D0075C207 /* SSDynamicTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5291D664C0D0075C207 /* SSDynamicTextField.h */; };
+		4172E53E1D664C0D0075C207 /* SSDynamicTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E52A1D664C0D0075C207 /* SSDynamicTextField.m */; };
+		4172E53F1D664C0D0075C207 /* SSDynamicTextSizeChanger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E52B1D664C0D0075C207 /* SSDynamicTextSizeChanger.h */; };
+		4172E5401D664C0D0075C207 /* SSDynamicTextSizeChanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E52C1D664C0D0075C207 /* SSDynamicTextSizeChanger.m */; };
+		4172E5411D664C0D0075C207 /* SSDynamicTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E52D1D664C0D0075C207 /* SSDynamicTextView.h */; };
+		4172E5421D664C0D0075C207 /* SSDynamicTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E52E1D664C0D0075C207 /* SSDynamicTextView.m */; };
+		4172E5431D664C0D0075C207 /* UIApplication+SSTextSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E52F1D664C0D0075C207 /* UIApplication+SSTextSize.h */; };
+		4172E5441D664C0D0075C207 /* UIApplication+SSTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E5301D664C0D0075C207 /* UIApplication+SSTextSize.m */; };
+		4172E5451D664C0D0075C207 /* UIFont+SSTextSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5311D664C0D0075C207 /* UIFont+SSTextSize.h */; };
+		4172E5461D664C0D0075C207 /* UIFont+SSTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E5321D664C0D0075C207 /* UIFont+SSTextSize.m */; };
+		4172E5471D664C0D0075C207 /* UIView+SSTextSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 4172E5331D664C0D0075C207 /* UIView+SSTextSize.h */; };
+		4172E5481D664C0D0075C207 /* UIView+SSTextSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4172E5341D664C0D0075C207 /* UIView+SSTextSize.m */; };
 		4181AA311C30229E0000DDC1 /* SSDynamicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B74328F41B9461E60098E793 /* SSDynamicsView.m */; };
 		5EE286D7180239B800D286ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286D6180239B800D286ED /* Foundation.framework */; };
 		5EE286D9180239B800D286ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE286D8180239B800D286ED /* CoreGraphics.framework */; };
@@ -44,6 +64,28 @@
 
 /* Begin PBXFileReference section */
 		0E2159830340851187ABBF61 /* libPods-SSDynamicTextExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4172E5181D664B620075C207 /* SSDynamicText.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSDynamicText.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4172E51A1D664B620075C207 /* SSDynamicText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSDynamicText.h; sourceTree = "<group>"; };
+		4172E51C1D664B620075C207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4172E5211D664C0D0075C207 /* NSAttributedString+SSTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+SSTextSize.h"; sourceTree = "<group>"; };
+		4172E5221D664C0D0075C207 /* NSAttributedString+SSTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+SSTextSize.m"; sourceTree = "<group>"; };
+		4172E5231D664C0D0075C207 /* SSDynamicAttributedTextSizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicAttributedTextSizable.h; sourceTree = "<group>"; };
+		4172E5241D664C0D0075C207 /* SSDynamicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicButton.h; sourceTree = "<group>"; };
+		4172E5251D664C0D0075C207 /* SSDynamicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicButton.m; sourceTree = "<group>"; };
+		4172E5261D664C0D0075C207 /* SSDynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicLabel.h; sourceTree = "<group>"; };
+		4172E5271D664C0D0075C207 /* SSDynamicLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicLabel.m; sourceTree = "<group>"; };
+		4172E5291D664C0D0075C207 /* SSDynamicTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicTextField.h; sourceTree = "<group>"; };
+		4172E52A1D664C0D0075C207 /* SSDynamicTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextField.m; sourceTree = "<group>"; };
+		4172E52B1D664C0D0075C207 /* SSDynamicTextSizeChanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicTextSizeChanger.h; sourceTree = "<group>"; };
+		4172E52C1D664C0D0075C207 /* SSDynamicTextSizeChanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextSizeChanger.m; sourceTree = "<group>"; };
+		4172E52D1D664C0D0075C207 /* SSDynamicTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDynamicTextView.h; sourceTree = "<group>"; };
+		4172E52E1D664C0D0075C207 /* SSDynamicTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDynamicTextView.m; sourceTree = "<group>"; };
+		4172E52F1D664C0D0075C207 /* UIApplication+SSTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+SSTextSize.h"; sourceTree = "<group>"; };
+		4172E5301D664C0D0075C207 /* UIApplication+SSTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+SSTextSize.m"; sourceTree = "<group>"; };
+		4172E5311D664C0D0075C207 /* UIFont+SSTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SSTextSize.h"; sourceTree = "<group>"; };
+		4172E5321D664C0D0075C207 /* UIFont+SSTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SSTextSize.m"; sourceTree = "<group>"; };
+		4172E5331D664C0D0075C207 /* UIView+SSTextSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SSTextSize.h"; sourceTree = "<group>"; };
+		4172E5341D664C0D0075C207 /* UIView+SSTextSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SSTextSize.m"; sourceTree = "<group>"; };
 		5136338D4A373052CC15BB7D /* Pods-SSDynamicTextTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSDynamicTextTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSDynamicTextTests/Pods-SSDynamicTextTests.release.xcconfig"; sourceTree = "<group>"; };
 		514C3AADC3AD1C801B243A28 /* libPods-SSDynamicTextTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SSDynamicTextTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E90DAC819F9655600257F8E /* SSDynamicTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSDynamicTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +125,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4172E5141D664B620075C207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E90DAC519F9655600257F8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,6 +154,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4172E5191D664B620075C207 /* SSDynamicText */ = {
+			isa = PBXGroup;
+			children = (
+				4172E5201D664C0D0075C207 /* Classes */,
+				4172E51A1D664B620075C207 /* SSDynamicText.h */,
+				4172E51C1D664B620075C207 /* Info.plist */,
+			);
+			path = SSDynamicText;
+			sourceTree = "<group>";
+		};
+		4172E5201D664C0D0075C207 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4172E5211D664C0D0075C207 /* NSAttributedString+SSTextSize.h */,
+				4172E5221D664C0D0075C207 /* NSAttributedString+SSTextSize.m */,
+				4172E5231D664C0D0075C207 /* SSDynamicAttributedTextSizable.h */,
+				4172E5241D664C0D0075C207 /* SSDynamicButton.h */,
+				4172E5251D664C0D0075C207 /* SSDynamicButton.m */,
+				4172E5261D664C0D0075C207 /* SSDynamicLabel.h */,
+				4172E5271D664C0D0075C207 /* SSDynamicLabel.m */,
+				4172E5291D664C0D0075C207 /* SSDynamicTextField.h */,
+				4172E52A1D664C0D0075C207 /* SSDynamicTextField.m */,
+				4172E52B1D664C0D0075C207 /* SSDynamicTextSizeChanger.h */,
+				4172E52C1D664C0D0075C207 /* SSDynamicTextSizeChanger.m */,
+				4172E52D1D664C0D0075C207 /* SSDynamicTextView.h */,
+				4172E52E1D664C0D0075C207 /* SSDynamicTextView.m */,
+				4172E52F1D664C0D0075C207 /* UIApplication+SSTextSize.h */,
+				4172E5301D664C0D0075C207 /* UIApplication+SSTextSize.m */,
+				4172E5311D664C0D0075C207 /* UIFont+SSTextSize.h */,
+				4172E5321D664C0D0075C207 /* UIFont+SSTextSize.m */,
+				4172E5331D664C0D0075C207 /* UIView+SSTextSize.h */,
+				4172E5341D664C0D0075C207 /* UIView+SSTextSize.m */,
+			);
+			name = Classes;
+			path = ../../Pod/Classes;
+			sourceTree = "<group>";
+		};
 		5E90DAC919F9655600257F8E /* SSDynamicTextTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +224,7 @@
 			children = (
 				5EE286DC180239B800D286ED /* SSDynamicTextExample */,
 				5E90DAC919F9655600257F8E /* SSDynamicTextTests */,
+				4172E5191D664B620075C207 /* SSDynamicText */,
 				5EE286D5180239B800D286ED /* Frameworks */,
 				5EE286D4180239B800D286ED /* Products */,
 				6C7DA71C3E16BF3548FD13C4 /* Pods */,
@@ -149,6 +236,7 @@
 			children = (
 				5EE286D3180239B800D286ED /* SSDynamicTextExample.app */,
 				5E90DAC819F9655600257F8E /* SSDynamicTextTests.xctest */,
+				4172E5181D664B620075C207 /* SSDynamicText.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,7 +294,46 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4172E5151D664B620075C207 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4172E5411D664C0D0075C207 /* SSDynamicTextView.h in Headers */,
+				4172E5351D664C0D0075C207 /* NSAttributedString+SSTextSize.h in Headers */,
+				4172E5471D664C0D0075C207 /* UIView+SSTextSize.h in Headers */,
+				4172E5431D664C0D0075C207 /* UIApplication+SSTextSize.h in Headers */,
+				4172E53A1D664C0D0075C207 /* SSDynamicLabel.h in Headers */,
+				4172E53F1D664C0D0075C207 /* SSDynamicTextSizeChanger.h in Headers */,
+				4172E53D1D664C0D0075C207 /* SSDynamicTextField.h in Headers */,
+				4172E51B1D664B620075C207 /* SSDynamicText.h in Headers */,
+				4172E5381D664C0D0075C207 /* SSDynamicButton.h in Headers */,
+				4172E5451D664C0D0075C207 /* UIFont+SSTextSize.h in Headers */,
+				4172E5371D664C0D0075C207 /* SSDynamicAttributedTextSizable.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4172E5171D664B620075C207 /* SSDynamicText */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4172E51F1D664B620075C207 /* Build configuration list for PBXNativeTarget "SSDynamicText" */;
+			buildPhases = (
+				4172E5131D664B620075C207 /* Sources */,
+				4172E5141D664B620075C207 /* Frameworks */,
+				4172E5151D664B620075C207 /* Headers */,
+				4172E5161D664B620075C207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSDynamicText;
+			productName = SSDynamicText;
+			productReference = 4172E5181D664B620075C207 /* SSDynamicText.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		5E90DAC719F9655600257F8E /* SSDynamicTextTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E90DAD019F9655600257F8E /* Build configuration list for PBXNativeTarget "SSDynamicTextTests" */;
@@ -255,9 +382,12 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SS;
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Splinesoft;
 				TargetAttributes = {
+					4172E5171D664B620075C207 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					5E90DAC719F9655600257F8E = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 5EE286D2180239B800D286ED;
@@ -277,6 +407,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				4172E5171D664B620075C207 /* SSDynamicText */,
 				5EE286D2180239B800D286ED /* SSDynamicTextExample */,
 				5E90DAC719F9655600257F8E /* SSDynamicTextTests */,
 			);
@@ -284,6 +415,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4172E5161D664B620075C207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E90DAC619F9655600257F8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +535,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4172E5131D664B620075C207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4172E5481D664C0D0075C207 /* UIView+SSTextSize.m in Sources */,
+				4172E53B1D664C0D0075C207 /* SSDynamicLabel.m in Sources */,
+				4172E5361D664C0D0075C207 /* NSAttributedString+SSTextSize.m in Sources */,
+				4172E5391D664C0D0075C207 /* SSDynamicButton.m in Sources */,
+				4172E5421D664C0D0075C207 /* SSDynamicTextView.m in Sources */,
+				4172E5461D664C0D0075C207 /* UIFont+SSTextSize.m in Sources */,
+				4172E5441D664C0D0075C207 /* UIApplication+SSTextSize.m in Sources */,
+				4172E53E1D664C0D0075C207 /* SSDynamicTextField.m in Sources */,
+				4172E5401D664C0D0075C207 /* SSDynamicTextSizeChanger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5E90DAC419F9655600257F8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,6 +602,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4172E51D1D664B620075C207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = SSDynamicText/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SSDynamicText;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4172E51E1D664B620075C207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = SSDynamicText/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = SSDynamicText;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5E90DAD119F9655600257F8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8624741A93A8C2A0AAD84CD1 /* Pods-SSDynamicTextTests.debug.xcconfig */;
@@ -469,6 +681,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.splinesoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSDynamicTextExample.app/SSDynamicTextExample";
 			};
@@ -490,6 +703,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.splinesoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SSDynamicTextExample.app/SSDynamicTextExample";
 			};
@@ -513,6 +727,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -578,6 +793,7 @@
 				INFOPLIST_FILE = "SSDynamicTextExample/SSDynamicTextExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.splinesoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -593,6 +809,7 @@
 				GCC_PREFIX_HEADER = "SSDynamicTextExample/SSDynamicTextExample-Prefix.pch";
 				INFOPLIST_FILE = "SSDynamicTextExample/SSDynamicTextExample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.splinesoft.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -601,6 +818,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4172E51F1D664B620075C207 /* Build configuration list for PBXNativeTarget "SSDynamicText" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4172E51D1D664B620075C207 /* Debug */,
+				4172E51E1D664B620075C207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5E90DAD019F9655600257F8E /* Build configuration list for PBXNativeTarget "SSDynamicTextTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

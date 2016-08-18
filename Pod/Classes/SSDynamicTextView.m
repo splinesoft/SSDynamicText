@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
-#import "SSDynamicText.h"
+#import "SSDynamicTextView.h"
 #import "SSDynamicTextSizeChanger.h"
 
 @interface SSDynamicTextView ()

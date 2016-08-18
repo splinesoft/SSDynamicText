@@ -7,6 +7,7 @@
 //
 
 #import "NSAttributedString+SSTextSize.h"
+@import UIKit;
 
 @implementation NSAttributedString (SSTextSize)
 

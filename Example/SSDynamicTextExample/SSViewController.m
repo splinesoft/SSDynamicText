@@ -7,7 +7,7 @@
 //
 
 #import "SSViewController.h"
-#import <SSDynamicText.h>
+#import <SSDynamicText/SSDynamicText.h>
 
 static NSString * const kLabelText = @"This label, text field, and text view all support custom fonts and respond to changes in preferred text size.\n\nSwitch to Settings.app, change your preferred text size, then switch back here.";
 
