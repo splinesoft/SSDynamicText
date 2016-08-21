@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+
 #import "SSDynamicAttributedTextSizable.h"
 
 @interface SSDynamicTextView : UITextView <SSDynamicAttributedTextSizable>

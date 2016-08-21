@@ -7,7 +7,7 @@
 //
 
 #import "SSDynamicButton.h"
-#import "SSDynamicText.h"
+#import "UIApplication+SSTextSize.h"
 #import "UIView+SSTextSize.h"
 #import "NSAttributedString+SSTextSize.h"
 

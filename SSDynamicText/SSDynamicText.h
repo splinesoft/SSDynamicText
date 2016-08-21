@@ -6,7 +6,13 @@
 //  Copyright (c) 2013 Splinesoft. All rights reserved.
 //
 
-#pragma once
+#import <UIKit/UIKit.h>
+
+//! Project version number for SSDynamicText.
+FOUNDATION_EXPORT double SSDynamicTextVersionNumber;
+
+//! Project version string for SSDynamicText.
+FOUNDATION_EXPORT const unsigned char SSDynamicTextVersionString[];
 
 #import "UIApplication+SSTextSize.h"
 #import "UIFont+SSTextSize.h"

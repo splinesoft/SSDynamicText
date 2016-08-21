@@ -7,6 +7,7 @@
 //
 
 @import UIKit;
+
 #import "SSDynamicAttributedTextSizable.h"
 
 @interface SSDynamicTextField : UITextField <SSDynamicAttributedTextSizable>
