@@ -2,6 +2,8 @@ SSDynamicText
 =============
 
 [![Circle CI](https://circleci.com/gh/splinesoft/SSDynamicText.svg?style=svg)](https://circleci.com/gh/splinesoft/SSDynamicText) [![codecov.io](http://codecov.io/github/splinesoft/SSDynamicText/coverage.svg?branch=master)](http://codecov.io/github/splinesoft/SSDynamicText?branch=master)
+[![Version](https://img.shields.io/cocoapods/v/SSDynamicText.svg)](http://cocoapods.org/pods/SSDynamicText)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFontDescriptor_Class/) is pretty neat. Also pretty neat is dynamic text that responds to the preferred text size that the user specified in Settings.app.
 
@@ -15,10 +17,18 @@ Xcode 7.0+ with iOS 7.0+ SDK.
 
 ## Install
 
-Install with [CocoaPods](http://cocoapods.org). Add to your `Podfile`:
+### [CocoaPods](http://cocoapods.org)
+Add to your `Podfile`:
 
 ```ruby
-pod 'SSDynamicText', '~> 1.0'
+pod 'SSDynamicText', '~> 1.0.0'
+```
+
+### [Carthage](https://github.com/Carthage/Carthage)
+Add to your `Cartfile`:
+
+```ruby
+github "splinesoft/SSDynamicText", ~> 1.1.0
 ```
 
 ## Example usage

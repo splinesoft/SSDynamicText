@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Splinesoft. All rights reserved. 
 //
 
+@import UIKit;
+
 #import "NSAttributedString+SSTextSize.h"
 
 @implementation NSAttributedString (SSTextSize)
