@@ -3,12 +3,13 @@
 ## 1.1.0
 ###### ?
 
+- **(fixed)** Fixed IB crash for `SSDynamicButton` subclasses, [#36](https://github.com/splinesoft/SSDynamicText/issues/36). _([Grubas7](https://github.com/Grubas7))_
 - **(added)** Added Carthage support (by creating SSDynamicText project with framework target). _([Grubas7](https://github.com/Grubas7))_
 
 ## 1.0.0
 ###### June 5, 2016
 
-- **(fixed)** Fixed `titleLabel` font upgrade for `SSDynamicButton` after font change, [#27](https://github.com/splinesoft/SSDynamicText/issues/8). _([Grubas7](https://github.com/Grubas7))_
+- **(fixed)** Fixed `titleLabel` font upgrade for `SSDynamicButton` after font change, [#27](https://github.com/splinesoft/SSDynamicText/issues/27). _([Grubas7](https://github.com/Grubas7))_
 - **(modified)** Changed `ss_defaultFontName`, and `ss_defaultBaseSize` from methods to readonly properties. _([Grubas7](https://github.com/Grubas7))_
 
 ## 0.5.0
