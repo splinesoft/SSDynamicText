@@ -1,7 +1,7 @@
 # SSDynamicText CHANGELOG
 
 ## 1.1.0
-###### ?
+###### September 26, 2016
 
 - **(fixed)** Fixed IB crash for `SSDynamicButton` subclasses, [#36](https://github.com/splinesoft/SSDynamicText/issues/36). _([Grubas7](https://github.com/Grubas7))_
 - **(added)** Added Carthage support (by creating SSDynamicText project with framework target). _([Grubas7](https://github.com/Grubas7))_
