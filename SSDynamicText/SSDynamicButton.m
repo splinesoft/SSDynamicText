@@ -112,11 +112,15 @@
 #pragma mark - Font observing
 
 - (void)addTitleLabelFontObserver {
+#if !TARGET_INTERFACE_BUILDER
     [self.titleLabel addObserver:self forKeyPath:NSStringFromSelector(@selector(font)) options:NSKeyValueObservingOptionNew context:NULL];
+#endif
 }
 
 - (void)removeTitleLabelFontObserver {
+#if !TARGET_INTERFACE_BUILDER
     [self.titleLabel removeObserver:self forKeyPath:NSStringFromSelector(@selector(font))];
+#endif
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
