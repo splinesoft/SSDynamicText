@@ -1,6 +1,6 @@
 PODS:
   - OCMock (3.1.5)
-  - SSDynamicText (1.0.0)
+  - SSDynamicText (1.1.0)
 
 DEPENDENCIES:
   - OCMock (~> 3)
@@ -8,11 +8,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   SSDynamicText:
-    :path: ..
+    :path: ".."
 
 SPEC CHECKSUMS:
   OCMock: 4c2925291f80407c3738dd1db14d21d0cc278864
-  SSDynamicText: 145b9049bde69e24ea7690018808615562f996ff
+  SSDynamicText: e5a1d15b757814a78508de4aeb73cdd287948cfe
 
 PODFILE CHECKSUM: 0e12a41ac296d50b08c14cb165dbb2d8a85fb3ae
 
