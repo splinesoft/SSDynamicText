@@ -2,13 +2,12 @@ comment:
     layout: "header, changes, diff, sunburst"
 coverage:
     ignore:
-        - "SSDynamicText/*"
         - "Example/*"
         - "Applications/*"
     status:
         patch:
             default:
-                target: 99%
+                target: 90%
         project:
             default:
-                target: 99%
+                target: 90%
