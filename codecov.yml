@@ -2,7 +2,7 @@ comment:
     layout: header, changes, diff, sunburst
 coverage:
     ignore:
-        - Example/.*
+        - ./Example/.*
         - Applications/.*
     status:
         patch:
