@@ -75,13 +75,18 @@
     __weak typeof(self) weakSelf = self;
 
     changer.fontChangeBlock = ^(UIFont *font) {
-        [super setFont:font];
+        // https://github.com/splinesoft/SSDynamicText/issues/40
+        [weakSelf superSetFont:font];
     };
 
     changer.attributedTextChangeBlock = ^(NSAttributedString *attributedText) {
         weakSelf.attributedText = attributedText;
     };
     return changer;
+}
+
+- (void)superSetFont:(UIFont *)font {
+    [super setFont:font];
 }
 
 - (void)startObservingTextSizeChanges {
