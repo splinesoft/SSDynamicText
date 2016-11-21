@@ -7,70 +7,69 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SSDynamicText.h"
 #import "SSTestsHelper.h"
-
-/**
- * Class provided to test unregistering of `UIContentSizeCategoryDidChangeNotification` notification.
- * File has disabled ARC via `-fno-objc-arc` compiler flag in compile sources.
- * Please DO NOT add more tests in this file.
- */
+#import "SSDynamicText.h"
 
 @interface SSDynamicViewsReleaseTests : XCTestCase
-
 @end
 
 @implementation SSDynamicViewsReleaseTests
 
-- (void)testDynamicLabelShouldNotObserveTextSizeChangesAfterRelease {
-
+- (void)testDynamicLabelShouldBeReleaseable {
     // Arrange
+    __weak SSDynamicLabel *label = nil;
+
+    // Act
     @autoreleasepool {
-        SSDynamicLabel *label = [SSDynamicLabel labelWithFont:SSTestFontName baseSize:SSTestFontSize];
-        [label release];
+        label = [[SSDynamicLabel alloc] init];
+        label.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:SSTestFontName size:SSTestFontSize];
     }
 
-    // Act & Assert
-    XCTAssertNoThrow([SSTestsHelper postContentSizeChangeNotification]);
+    // Assert
+    XCTAssertNil(label);
 }
 
-/**
- //TODO: Test for dynamic button release hangs. Will be enabled again after research and fix.
-- (void)testDynamicButtonShouldNotObserveTextSizeChangesAfterRelease {
 
+- (void)testDynamicButtonShouldShouldBeReleaseable {
     // Arrange
+    __weak SSDynamicButton *button = nil;
+
+    // Act
     @autoreleasepool {
-        SSDynamicButton *button = [SSDynamicButton buttonWithFont:SSTestFontName baseSize:SSTestFontSize];
-        [button release];
+        button = [[SSDynamicButton alloc] init];
+        button.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:SSTestFontName size:SSTestFontSize];
     }
 
-    // Act & Assert
-    XCTAssertNoThrow([SSTestsHelper postContentSizeChangeNotification]);
-}
- */
-
-- (void)testDynamicTextViewShouldNotObserveTextSizeChangesAfterRelease {
-
-    // Arrange
-    @autoreleasepool {
-        SSDynamicTextView *textView = [SSDynamicTextView textViewWithFont:SSTestFontName baseSize:SSTestFontSize];
-        [textView release];
-    }
-
-    // Act & Assert
-    XCTAssertNoThrow([SSTestsHelper postContentSizeChangeNotification]);
+    // Assert
+    XCTAssertNil(button);
 }
 
-- (void)testDynamicTextFieldShouldNotObserveTextSizeChangesAfterRelease {
-
+- (void)testDynamicTextViewShouldShouldBeReleaseable {
     // Arrange
+    __weak SSDynamicTextView *textView = nil;
+
     @autoreleasepool {
-        SSDynamicTextField *textField = [SSDynamicTextField textFieldWithFont:SSTestFontName baseSize:SSTestFontSize];
-        [textField release];
+        // Act
+        textView = [[SSDynamicTextView alloc] init];
+        textView.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:SSTestFontName size:SSTestFontSize];
     }
 
-    // Act & Assert
-    XCTAssertNoThrow([SSTestsHelper postContentSizeChangeNotification]);
+    // Assert
+    XCTAssertNil(textView);
+}
+
+- (void)testDynamicTextFieldShouldBeReleaseable {
+    // Arrange
+    __weak SSDynamicTextField *textField = nil;
+
+    @autoreleasepool {
+        // Act
+        textField = [[SSDynamicTextField alloc] init];
+        textField.defaultFontDescriptor = [UIFontDescriptor fontDescriptorWithName:SSTestFontName size:SSTestFontSize];
+    }
+
+    // Assert
+    XCTAssertNil(textField);
 }
 
 @end
