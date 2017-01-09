@@ -21,14 +21,14 @@ Xcode 7.0+ with iOS 7.0+ SDK.
 Add to your `Podfile`:
 
 ```ruby
-pod 'SSDynamicText', '~> 1.0.0'
+pod 'SSDynamicText', '~> 1.1.1'
 ```
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 Add to your `Cartfile`:
 
 ```ruby
-github "splinesoft/SSDynamicText", ~> 1.1.0
+github "splinesoft/SSDynamicText", ~> 1.1.1
 ```
 
 ## Example usage

@@ -1,7 +1,7 @@
 # SSDynamicText CHANGELOG
 
-## ?.?.?
-###### ?
+## 1.1.1
+###### January 8, 2016
 
 - **(fixed)** Fixed memory leak caused by strong retain cycle in `SSDynamicLabel`, `SSDynamicTextView` and `SSDynamicTextField` classes, [#40](https://github.com/splinesoft/SSDynamicText/issues/40). _([Grubas7](https://github.com/Grubas7))_
 
