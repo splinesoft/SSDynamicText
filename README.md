@@ -1,6 +1,10 @@
 SSDynamicText
 =============
 
+# iOS 11 fully covers `SSDynamicText` functionality. Library won't be supported anymore.
+
+---
+
 [![Circle CI](https://circleci.com/gh/splinesoft/SSDynamicText.svg?style=svg)](https://circleci.com/gh/splinesoft/SSDynamicText) [![codecov.io](http://codecov.io/github/splinesoft/SSDynamicText/coverage.svg?branch=master)](http://codecov.io/github/splinesoft/SSDynamicText?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/SSDynamicText.svg)](http://cocoapods.org/pods/SSDynamicText)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -10,6 +14,63 @@ iOS 7's [`UIFontDescriptor`](https://developer.apple.com/library/ios/documentati
 What's not so neat, though, is that `+[UIFont preferredFontForTextStyle:]` only works with the system font, Helvetica Neue (iOS 8) or San Francisco (iOS 9). What if you have custom fonts and want to respect the user's text size preference?
 
 SSDynamicText is a collection of simple `UILabel`, `UIButton`, `UITextField`, and `UITextView` subclasses inspired by [this](http://stackoverflow.com/questions/18758227/ios7-can-we-use-other-than-helvetica-neue-fonts-with-dynamic-type/19024944#19024944) SO answer.
+
+iOS 10 added to `UILabel`, `UITextField` and `UITextView` built-in dynamic font size support via [`adjustsFontForContentSizeCategory`](https://developer.apple.com/documentation/uikit/uicontentsizecategoryadjusting), so there's no need to manually update font after content size category change. Sadly accessibility content size categories work only for [`.body`](https://developer.apple.com/documentation/uikit/uifonttextstyle/1616682-body) style.
+
+But finally in iOS 11 Apple introduced  [`UIFontMetrics`](https://developer.apple.com/documentation/uikit/uifontmetrics) which allows to use custom fonts with all content size categories support.
+It's supported by `UILabel` (so `UIButton` as well), `UITextField` and `UITextView`. Works for plain text and `NSAttributedString`.
+
+```objc
+// Plain text
+UIFont *font = [UIFont fontWithName:@"Courier" size:28.0f];
+label.font = [UIFontMetrics.defaultMetrics scaledFontForFont:font];
+label.adjustsFontForContentSizeCategory = YES;
+label.text = @"Plan text";
+
+// Attributed text
+UIFont *biggerFont = [UIFont fontWithName:@"Courier" size:28.0f];
+UIFont *scaledBiggerFont = [[UIFontMetrics metricsForTextStyle:UIFontTextStyleTitle1] scaledFontForFont:biggerFont];
+UIFont *smallerFont = [UIFont fontWithName:@"Courier" size:13.0f];
+UIFont *scaledSmallerFont = [[UIFontMetrics metricsForTextStyle: UIFontTextStyleFootnote] scaledFontForFont:smallerFont];
+
+NSAttributedString *biggerAttributedText = [[NSAttributedString alloc] initWithString:@"Bigger text"
+                                                                           attributes:@{ NSAccessibilityFontTextAttribute : scaledBiggerFont }];
+NSAttributedString *smallerAttributedText = [[NSAttributedString alloc initWithString:@"smaller text"
+                                                                           attributes:@{ NSAccessibilityFontTextAttribute : scaledSmallerFont }];
+
+NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
+[attributedText appendAttributedString:biggerAttributedText];
+[attributedText appendAttributedString:smallerAttributedText];
+
+label.adjustsFontForContentSizeCategory = YES;
+label.attributedText = attributedText;
+```
+
+```swift
+// Plain text
+let font = UIFont(name: "Courier", size: 17.0)!
+label.font = UIFontMetrics.default.scaledFont(for: font)
+label.adjustsFontForContentSizeCategory = true
+label.text = "Plan text"
+
+// Attributed text
+let biggerFont = UIFont(name: "Courier", size: 28.0)!
+let scaledBiggerFont = UIFontMetrics(forTextStyle: .title1).scaledFont(for: biggerFont)
+let smallerFont = UIFont(name: "Courier", size: 13.0)!
+let scaledSmallerFont = UIFontMetrics(forTextStyle: .footnote).scaledFont(for: smallerFont)
+
+let biggerAttributedText = NSAttributedString(string: "Bigger text",
+                                              attributes: [.font: scaledBiggerFont])
+let smallerAttributedText = NSAttributedString(string: "smaller text",
+                                               attributes: [.font: scaledSmallerFont])
+
+let attributedText = NSMutableAttributedString()
+attributedText.append(biggerAttributedText)
+attributedText.append(smallerAttributedText)
+
+label.adjustsFontForContentSizeCategory = true
+label.attributedText = attributedText
+```
 
 ## Requirements
 
